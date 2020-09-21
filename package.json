@@ -1,0 +1,32 @@
+{
+  "name": "coffee-shop-pos",
+  "version": "1.0.0",
+  "description": "Coffee Shop PoS Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel-node -- src/server.js",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayakashu/coffee-shop-pos.git"
+  },
+  "author": "nayakashu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nayakashu/coffee-shop-pos/issues"
+  },
+  "homepage": "https://github.com/nayakashu/coffee-shop-pos#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}

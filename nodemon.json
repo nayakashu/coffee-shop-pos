@@ -1,0 +1,14 @@
+{
+  "exec": "npm run start",
+  "watch": [
+    ".env",
+    "package*.json",
+    ".babelrc",
+    "src/*"
+  ],
+  "ignore": [
+    "**/__tests__/**",
+    "*.test.js",
+    "*.spec.js"
+  ]
+}

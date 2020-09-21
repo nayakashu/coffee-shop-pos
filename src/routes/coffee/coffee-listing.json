@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "coffee",
+      "title": "Black Coffee",
+      "description": "Coffee"
+    },
+    {
+      "id": 2,
+      "type": "coffee",
+      "title": "Milk Coffee",
+      "description": "Coffee"
+    },
+    {
+      "id": 3,
+      "type": "coffee",
+      "title": "Cafe Latte",
+      "description": "Coffee"
+    },
+    {
+      "id": 4,
+      "type": "coffee",
+      "title": "Hazelnut Coffee",
+      "description": "Coffee"
+    },
+    {
+      "id": 5,
+      "type": "coffee",
+      "title": "Filtered Coffee",
+      "description": "Coffee"
+    },
+    {
+      "id": 6,
+      "type": "coffee",
+      "title": "Cafe Mocha",
+      "description": "Coffee"
+    }
+  ]
+}
