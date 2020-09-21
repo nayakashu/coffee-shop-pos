@@ -4,8 +4,11 @@
   "description": "Coffee Shop PoS Application",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm ci --prefix src/client",
     "start": "babel-node -- src/server.js",
-    "dev": "nodemon"
+    "server": "nodemon",
+    "client": "npm start --prefix src/client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
