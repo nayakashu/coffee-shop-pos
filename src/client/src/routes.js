@@ -1,8 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { DefaultLayout } from './layouts';
-import { CoffeeListing } from './pages/CoffeeListing/CoffeeListing';
-import { ShakesListing } from './pages/ShakesListing/ShakesListing';
+import { CoffeeList } from './pages/CoffeeList/CoffeeList';
+import { ShakesList } from './pages/ShakesList/ShakesList';
 
 export default [
   {
@@ -15,11 +15,11 @@ export default [
     path: '/coffee',
     exact: true,
     layout: DefaultLayout,
-    component: CoffeeListing,
+    component: CoffeeList,
   },
   {
     path: '/shakes',
     layout: DefaultLayout,
-    component: ShakesListing,
+    component: ShakesList,
   },
 ];
