@@ -1,0 +1,40 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "type": "shake",
+      "title": "Cold Coffee",
+      "description": "Shake"
+    },
+    {
+      "id": 2,
+      "type": "shake",
+      "title": "Cold Frappe",
+      "description": "Shake"
+    },
+    {
+      "id": 3,
+      "type": "shake",
+      "title": "Strawberry Milk Shake",
+      "description": "Shake"
+    },
+    {
+      "id": 4,
+      "type": "shake",
+      "title": "Hazelnut Milk Shake",
+      "description": "Shake"
+    },
+    {
+      "id": 5,
+      "type": "shake",
+      "title": "Devil's Chocolate",
+      "description": "Shake"
+    },
+    {
+      "id": 6,
+      "type": "shake",
+      "title": "Vanilla Milk Chocolate",
+      "description": "Shake"
+    }
+  ]
+}

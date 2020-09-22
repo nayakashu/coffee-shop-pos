@@ -59,9 +59,6 @@ function DefaultLayout({ children }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap className={classes.title}>
-            Coffee Shop
-          </Typography>
           <IconButton
             aria-label="account of current user"
             aria-controls="menu-appbar"
@@ -75,6 +72,9 @@ function DefaultLayout({ children }) {
               alt="Starbucks"
             ></img>
           </IconButton>
+          <Typography variant="h6" noWrap className={classes.title}>
+            Coffee Shop
+          </Typography>
         </Toolbar>
       </AppBar>
 
