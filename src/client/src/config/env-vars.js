@@ -4,7 +4,7 @@ const allEnv = {
   },
 
   production: {
-    baseUrl: 'http://localhost:5000/api/',
+    baseUrl: '/api/',
   },
 };
 

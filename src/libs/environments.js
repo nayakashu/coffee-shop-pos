@@ -1,9 +1,9 @@
 export const DEVELOPMENT = 'development';
 export const PRODUCTION = 'production';
 
-export const ENV_NAME = process.env.ENV_NAME || DEVELOPMENT;
+export const NODE_ENV = process.env.NODE_ENV;
 
-if (ENV_NAME === DEVELOPMENT) {
+if (NODE_ENV === DEVELOPMENT) {
   require('dotenv').config({ silent: true });
 }
 
