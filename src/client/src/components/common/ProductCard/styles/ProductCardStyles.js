@@ -8,12 +8,24 @@ export default makeStyles((theme) => ({
     cursor: 'pointer',
     width: '32%',
     marginBottom: theme.spacing(2),
-    height: 350,
+    justifyContent: 'space-between',
     [theme.breakpoints.down('md')]: {
       width: '48%',
     },
-    '@media (max-width:768px)': {
+    '@media (max-width:1000px)': {
       width: '100%',
+    },
+    '@media (max-width:840px)': {
+      width: '48%',
+    },
+    '@media (max-width:550px)': {
+      width: '100%',
+    },
+  },
+  title: {
+    fontSize: '1.5rem',
+    '@media (max-width:1000px)': {
+      fontSize: '1rem',
     },
   },
   media: {
@@ -21,7 +33,6 @@ export default makeStyles((theme) => ({
     height: 180,
   },
   addBtnContainer: {
-    marginTop: theme.spacing(2),
     padding: theme.spacing(1),
     width: '100%',
     display: 'flex',

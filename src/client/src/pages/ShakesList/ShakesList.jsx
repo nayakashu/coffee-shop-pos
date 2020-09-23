@@ -11,7 +11,7 @@ export const ShakesList = () => {
   const [storeState, storeActions] = useGlobal();
 
   const { shakesList } = storeState;
-  const { setList } = storeActions;
+  const { setList, addToCart } = storeActions;
 
   useEffect(() => {
     (async () => {
@@ -34,6 +34,10 @@ export const ShakesList = () => {
     })();
   }, [setList]);
 
+  const addCartData = (cartData) => {
+    addToCart({ cartData });
+  };
+
   return (
     <>
       {loading && <PageLoader />}
@@ -44,6 +48,8 @@ export const ShakesList = () => {
             cardImage={ShakesCardImage}
             title={shake.title}
             description={shake.description}
+            data={shake}
+            addHandler={addCartData}
           ></ProductCard>
         ))}
       </div>

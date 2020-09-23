@@ -8,54 +8,90 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import CloseIcon from '@material-ui/icons/Close';
+import HomeSharpIcon from '@material-ui/icons/HomeSharp';
 import MenuIcon from '@material-ui/icons/Menu';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CoffeeLogo from '../assets/vectors/coffee.svg';
-import defaultStyles from './styles/default-styles';
+import { Cart } from '../components/Cart/Cart';
+import useGlobal from '../store/store';
+import defaultStyles, { StyledBadge } from './styles/DefaultStyles';
 
-function DefaultLayout({ children }) {
+function DefaultLayout({ children, history }) {
   const categories = [
     { value: 'Coffee', href: '/coffee' },
     { value: 'Shakes', href: '/shakes' },
   ];
-  const classes = defaultStyles();
+  const {
+    listItemHover,
+    arrowForwardIcon,
+    root,
+    appBar,
+    menuButton,
+    title,
+    drawer: drawerClass,
+    drawerPaper,
+    closeMenuButton,
+    toolbar,
+    content,
+    rightDrawer,
+    rightDrawerPaper,
+  } = defaultStyles();
+
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileCheckoutOpen, setMobileCheckoutOpen] = useState(false);
+
+  const [storeState] = useGlobal();
+  const { cart } = storeState;
 
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
   }
 
+  function handleRightDrawerToggle() {
+    if (document?.documentElement?.clientWidth < 840)
+      setMobileCheckoutOpen(!mobileCheckoutOpen);
+  }
+
   const drawer = (
-    <div>
-      <List>
-        {categories.map((text, index) => (
-          <ListItem
-            className={classes.listItemHover}
-            style={{ color: 'black' }}
-            component={Link}
-            to={text.href}
-            key={index}
+    <List>
+      {categories.map((text, index) => (
+        <ListItem
+          className={listItemHover}
+          style={{ color: 'black' }}
+          component={Link}
+          to={text.href}
+          key={index}
+        >
+          <ListItemText primary={text.value} />
+          <IconButton
+            className={arrowForwardIcon}
+            edge="end"
+            aria-label="arrow"
+            onClick={(e) => e.preventDefault()}
+            disableRipple
           >
-            <ListItemText primary={text.value} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+            <ArrowForwardIosIcon />
+          </IconButton>
+        </ListItem>
+      ))}
+    </List>
   );
 
   return (
-    <div className={classes.root}>
+    <div className={root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="Open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            className={classes.menuButton}
+            className={menuButton}
           >
             <MenuIcon />
           </IconButton>
@@ -69,16 +105,24 @@ function DefaultLayout({ children }) {
             <img
               src={CoffeeLogo}
               style={{ height: '50px', width: '50px' }}
-              alt="Starbucks"
+              alt="Coffee Shop"
             ></img>
           </IconButton>
-          <Typography variant="h6" noWrap className={classes.title}>
+          <Typography variant="h6" noWrap className={title}>
             Coffee Shop
           </Typography>
+          <IconButton aria-label="home" onClick={() => history.push('/')}>
+            <HomeSharpIcon />
+          </IconButton>
+          <IconButton aria-label="cart" onClick={handleRightDrawerToggle}>
+            <StyledBadge badgeContent={cart.length} color="secondary">
+              <ShoppingCartIcon />
+            </StyledBadge>
+          </IconButton>
         </Toolbar>
       </AppBar>
 
-      <nav className={classes.drawer}>
+      <nav className={drawerClass}>
         <Hidden smUp implementation="css">
           <Drawer
             variant="temporary"
@@ -86,7 +130,7 @@ function DefaultLayout({ children }) {
             open={mobileOpen}
             onClose={handleDrawerToggle}
             classes={{
-              paper: classes.drawerPaper,
+              paper: drawerPaper,
             }}
             ModalProps={{
               keepMounted: true,
@@ -94,30 +138,62 @@ function DefaultLayout({ children }) {
           >
             <IconButton
               onClick={handleDrawerToggle}
-              className={classes.closeMenuButton}
+              className={closeMenuButton}
             >
               <CloseIcon />
             </IconButton>
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            className={classes.drawer}
-            variant="permanent"
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-          >
-            <div className={classes.toolbar} />
-            {drawer}
-          </Drawer>
-        </Hidden>
+        <Drawer
+          className={drawerClass}
+          variant="permanent"
+          classes={{
+            paper: drawerPaper,
+          }}
+        >
+          <div className={toolbar} />
+          {drawer}
+        </Drawer>
       </nav>
-      <div className={classes.content}>
-        <div className={classes.toolbar} />
+      <div className={content}>
+        <div className={toolbar} />
         {children}
       </div>
+      <nav className={rightDrawer}>
+        <Hidden smUp implementation="css">
+          <Drawer
+            variant="temporary"
+            open={mobileCheckoutOpen}
+            onClose={handleRightDrawerToggle}
+            classes={{
+              paper: rightDrawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true,
+            }}
+            anchor={'right'}
+          >
+            <IconButton
+              onClick={handleRightDrawerToggle}
+              className={closeMenuButton}
+            >
+              <CloseIcon />
+            </IconButton>
+            <Cart />
+          </Drawer>
+        </Hidden>
+        <Drawer
+          className={rightDrawer}
+          variant="permanent"
+          classes={{
+            paper: rightDrawerPaper,
+          }}
+          anchor={'right'}
+        >
+          <Cart />
+        </Drawer>
+      </nav>
     </div>
   );
 }

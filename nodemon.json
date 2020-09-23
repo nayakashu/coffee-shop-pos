@@ -7,6 +7,7 @@
     "src/*"
   ],
   "ignore": [
+    "src/client",
     "**/__tests__/**",
     "*.test.js",
     "*.spec.js"

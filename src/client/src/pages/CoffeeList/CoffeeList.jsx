@@ -11,7 +11,7 @@ export const CoffeeList = () => {
   const [storeState, storeActions] = useGlobal();
 
   const { coffeeList } = storeState;
-  const { setList } = storeActions;
+  const { setList, addToCart } = storeActions;
 
   useEffect(() => {
     (async () => {
@@ -34,6 +34,10 @@ export const CoffeeList = () => {
     })();
   }, [setList]);
 
+  const addCartData = (cartData) => {
+    addToCart({ cartData });
+  };
+
   return (
     <>
       {loading && <PageLoader />}
@@ -44,6 +48,8 @@ export const CoffeeList = () => {
             cardImage={CoffeeCardImage}
             title={coffee.title}
             description={coffee.description}
+            data={coffee}
+            addHandler={addCartData}
           ></ProductCard>
         ))}
       </div>
