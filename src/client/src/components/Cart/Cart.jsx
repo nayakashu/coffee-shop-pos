@@ -1,14 +1,14 @@
 import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import React, { useEffect, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import useGlobal from '../../store/store';
 import { CustomAccordion } from '../common/CustomAccordion/CustomAccordion';
 import './Cart.scss';
 import cartStyles from './styles/CartStyles';
 
-export const Cart = () => {
+const Cart = ({ history }) => {
   const { button } = cartStyles();
-
   const [totalPrice, settotalPrice] = useState(0);
 
   const [storeState, storeActions] = useGlobal();
@@ -17,13 +17,21 @@ export const Cart = () => {
 
   useEffect(() => {
     let price = 0;
-    cart.forEach((value) => {
-      price = price + value.price;
+    cart.forEach((item) => {
+      price = price + item.price;
+      if (item.extras) {
+        item.extras.forEach((extraItem) => {
+          price = price + extraItem.price;
+        });
+      }
     });
     settotalPrice(price);
   }, [cart]);
 
-  const deleteHandler = (cartIndex) => {
+  const deleteHandler = (cartItem, cartIndex) => {
+    if (cartItem.type === 'coffee') history.push('/coffee');
+    else history.push('/shakes');
+
     removeFromCart({ cartIndex });
   };
 
@@ -35,11 +43,11 @@ export const Cart = () => {
         {cart.length === 0 && (
           <h4 style={{ textAlign: 'center' }}>No items in cart</h4>
         )}
-        {cart.map((cartValue, index) => (
+        {cart.map((cartItem, index) => (
           <CustomAccordion
             key={index}
             cartIndex={index}
-            cartValue={cartValue}
+            cartItem={cartItem}
             deleteHandler={(index) => deleteHandler(index)}
           />
         ))}
@@ -58,3 +66,5 @@ export const Cart = () => {
     </div>
   );
 };
+
+export default withRouter(Cart);

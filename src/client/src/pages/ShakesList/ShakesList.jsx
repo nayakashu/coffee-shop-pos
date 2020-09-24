@@ -6,11 +6,11 @@ import { getListing } from '../../services/get-listing';
 import useGlobal from '../../store/store';
 import './ShakesList.scss';
 
-export const ShakesList = () => {
+export const ShakesList = ({ history }) => {
   const [loading, setLoading] = useState(true);
   const [storeState, storeActions] = useGlobal();
 
-  const { shakesList } = storeState;
+  const { cart, shakesList } = storeState;
   const { setList, addToCart } = storeActions;
 
   useEffect(() => {
@@ -34,25 +34,28 @@ export const ShakesList = () => {
     })();
   }, [setList]);
 
-  const addCartData = (cartData) => {
+  const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData });
+    history.push(`/customization/toppings/${cartIndex}`);
   };
 
   return (
-    <>
-      {loading && <PageLoader />}
-      <div className="shakes-container">
-        {shakesList.map((shake, index) => (
+    <div className="shakes-container">
+      {loading ? (
+        <PageLoader />
+      ) : (
+        shakesList.map((shake, index) => (
           <ProductCard
             key={index}
+            indexValue={cart.length}
             cardImage={ShakesCardImage}
             title={shake.title}
             description={shake.description}
             data={shake}
             addHandler={addCartData}
           ></ProductCard>
-        ))}
-      </div>
-    </>
+        ))
+      )}
+    </div>
   );
 };

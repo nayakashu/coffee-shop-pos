@@ -16,5 +16,11 @@ export default makeStyles((theme) => ({
   detailsHeader: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  extraItemWrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: theme.spacing(1),
   },
 }));

@@ -14,19 +14,22 @@ import HomeSharpIcon from '@material-ui/icons/HomeSharp';
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import CoffeeLogo from '../assets/vectors/coffee.svg';
-import { Cart } from '../components/Cart/Cart';
+import Cart from '../components/Cart/Cart';
 import useGlobal from '../store/store';
 import defaultStyles, { StyledBadge } from './styles/DefaultStyles';
 
 function DefaultLayout({ children, history }) {
+  let { id } = useParams();
+  const location = useLocation();
   const categories = [
-    { value: 'Coffee', href: '/coffee' },
-    { value: 'Shakes', href: '/shakes' },
+    { value: 'Toppings', href: 'toppings' },
+    { value: 'Combos', href: 'combos' },
   ];
   const {
-    listItemHover,
+    listRoot,
+    active,
     arrowForwardIcon,
     root,
     appBar,
@@ -56,14 +59,17 @@ function DefaultLayout({ children, history }) {
       setMobileCheckoutOpen(!mobileCheckoutOpen);
   }
 
+  function handleCategoryClick(category) {
+    history.push(`/customization/${category}/${id}`);
+  }
+
   const drawer = (
-    <List>
+    <List className={listRoot}>
       {categories.map((text, index) => (
         <ListItem
-          className={listItemHover}
-          style={{ color: 'black' }}
-          component={Link}
-          to={text.href}
+          className={location.pathname.includes(text.href) ? active : null}
+          button
+          onClick={() => handleCategoryClick(text.href)}
           key={index}
         >
           <ListItemText primary={text.value} />
@@ -71,7 +77,7 @@ function DefaultLayout({ children, history }) {
             className={arrowForwardIcon}
             edge="end"
             aria-label="arrow"
-            onClick={(e) => e.preventDefault()}
+            onClick={() => handleCategoryClick(text.href)}
             disableRipple
           >
             <ArrowForwardIosIcon />
@@ -142,7 +148,7 @@ function DefaultLayout({ children, history }) {
             >
               <CloseIcon />
             </IconButton>
-            {drawer}
+            {location?.pathname?.includes('/customization') && drawer}
           </Drawer>
         </Hidden>
         <Drawer
@@ -153,7 +159,7 @@ function DefaultLayout({ children, history }) {
           }}
         >
           <div className={toolbar} />
-          {drawer}
+          {location?.pathname?.includes('/customization') && drawer}
         </Drawer>
       </nav>
       <div className={content}>

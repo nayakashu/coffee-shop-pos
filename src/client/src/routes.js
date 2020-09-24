@@ -4,6 +4,7 @@ import { DefaultLayout, Landing } from './layouts';
 import { CoffeeList } from './pages/CoffeeList/CoffeeList';
 import { Home } from './pages/Home/Home';
 import { ShakesList } from './pages/ShakesList/ShakesList';
+import { ToppingsList } from './pages/ToppingsList/ToppingsList';
 
 export default [
   {
@@ -28,5 +29,15 @@ export default [
     path: '/shakes',
     layout: DefaultLayout,
     component: ShakesList,
+  },
+  {
+    path: '/customization/toppings/:id',
+    layout: DefaultLayout,
+    component: ToppingsList,
+  },
+  {
+    path: '/customization/combos/:id',
+    layout: DefaultLayout,
+    component: CoffeeList,
   },
 ];

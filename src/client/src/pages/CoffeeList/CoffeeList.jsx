@@ -6,11 +6,11 @@ import { getListing } from '../../services/get-listing';
 import useGlobal from '../../store/store';
 import './CoffeeList.scss';
 
-export const CoffeeList = () => {
+export const CoffeeList = ({ history }) => {
   const [loading, setLoading] = useState(true);
   const [storeState, storeActions] = useGlobal();
 
-  const { coffeeList } = storeState;
+  const { cart, coffeeList } = storeState;
   const { setList, addToCart } = storeActions;
 
   useEffect(() => {
@@ -34,25 +34,28 @@ export const CoffeeList = () => {
     })();
   }, [setList]);
 
-  const addCartData = (cartData) => {
+  const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData });
+    history.push(`/customization/toppings/${cartIndex}`);
   };
 
   return (
-    <>
-      {loading && <PageLoader />}
-      <div className="coffee-container">
-        {coffeeList.map((coffee, index) => (
+    <div className="coffee-container">
+      {loading ? (
+        <PageLoader />
+      ) : (
+        coffeeList.map((coffee, index) => (
           <ProductCard
             key={index}
+            indexValue={cart.length}
             cardImage={CoffeeCardImage}
             title={coffee.title}
             description={coffee.description}
             data={coffee}
             addHandler={addCartData}
           ></ProductCard>
-        ))}
-      </div>
-    </>
+        ))
+      )}
+    </div>
   );
 };

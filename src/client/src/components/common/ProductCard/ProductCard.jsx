@@ -7,6 +7,7 @@ import React from 'react';
 import productCardStyles from './styles/ProductCardStyles';
 
 export const ProductCard = ({
+  indexValue,
   cardImage,
   title,
   description,
@@ -44,7 +45,7 @@ export const ProductCard = ({
           variant="outlined"
           size="small"
           color="primary"
-          onClick={() => addHandler(data)}
+          onClick={() => addHandler(data, indexValue)}
         >
           Add
         </Button>

@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "title": "Choco Chips",
+      "price": 1.25
+    },
+    {
+      "id": 2,
+      "title": "Vanila Dip",
+      "price": 2.5
+    },
+    {
+      "id": 3,
+      "title": "Double Cream",
+      "price": 2
+    },
+    {
+      "id": 4,
+      "title": "Extra Sugar",
+      "price": 1
+    },
+    {
+      "id": 5,
+      "title": "Sugar Free Capsules",
+      "price": 1.5
+    },
+    {
+      "id": 6,
+      "title": "Extra Icecream",
+      "price": 2.5
+    }
+  ]
+}

@@ -14,6 +14,9 @@ export const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 
 export default makeStyles((theme) => ({
+  listRoot: {
+    marginTop: theme.spacing(1),
+  },
   root: {
     display: 'flex',
   },
@@ -26,9 +29,12 @@ export default makeStyles((theme) => ({
       display: 'none',
     },
   },
-  listItemHover: {
+  active: {
+    backgroundColor: '#5C5C5C',
+    opacity: 0.9,
+    color: 'white',
     '&:hover': {
-      backgroundColor: '#F5F5F5',
+      backgroundColor: '#5C5C5C',
     },
   },
   rightDrawer: {
@@ -59,6 +65,7 @@ export default makeStyles((theme) => ({
   },
   content: {
     width: '100%',
+    height: 'calc(100vh - 64px)',
     padding: theme.spacing(3),
   },
   closeMenuButton: {

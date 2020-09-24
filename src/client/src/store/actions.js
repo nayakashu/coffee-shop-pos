@@ -8,6 +8,32 @@ const addToCart = (store, payload) => {
   store.setState({ cart: newCart });
 };
 
+const addExtras = (store, payload) => {
+  const newCart = [...store.state.cart];
+  const item = newCart[payload.cartIndex];
+
+  if (item.extras) {
+    item.extras = [...item.extras, payload.extras];
+  } else {
+    item.extras = [payload.extras];
+  }
+
+  newCart[payload.cartIndex] = item;
+  store.setState({ cart: newCart });
+};
+
+const removeExtras = (store, payload) => {
+  const newCart = [...store.state.cart];
+  const item = newCart[payload.cartIndex];
+
+  item.extras = item.extras.filter((extra) => {
+    return extra.id !== payload.extras.id;
+  });
+
+  newCart[payload.cartIndex] = item;
+  store.setState({ cart: newCart });
+};
+
 const removeFromCart = (store, payload) => {
   let newCart = [...store.state.cart];
   newCart.splice(payload.cartIndex, 1);
@@ -18,6 +44,8 @@ const actions = {
   setList,
   addToCart,
   removeFromCart,
+  addExtras,
+  removeExtras,
 };
 
 export default actions;
