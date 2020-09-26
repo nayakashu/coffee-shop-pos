@@ -35,8 +35,8 @@ export const ShakesList = ({ history }) => {
   }, [setList]);
 
   const addCartData = (cartData, cartIndex) => {
-    addToCart({ cartData });
-    history.push(`/customization/toppings/${cartIndex}`);
+    addToCart({ cartData, cartIndex });
+    history.push('/customization');
   };
 
   return (

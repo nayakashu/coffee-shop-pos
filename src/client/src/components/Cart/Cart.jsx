@@ -12,7 +12,7 @@ const Cart = ({ history }) => {
   const [totalPrice, settotalPrice] = useState(0);
 
   const [storeState, storeActions] = useGlobal();
-  const { cart } = storeState;
+  const { cart, activeItemCartIndex } = storeState;
   const { removeFromCart } = storeActions;
 
   useEffect(() => {
@@ -29,10 +29,11 @@ const Cart = ({ history }) => {
   }, [cart]);
 
   const deleteHandler = (cartItem, cartIndex) => {
-    if (cartItem.type === 'coffee') history.push('/coffee');
-    else history.push('/shakes');
-
     removeFromCart({ cartIndex });
+    if (cartIndex === activeItemCartIndex && cartItem.type === 'coffee')
+      history.push('/coffee');
+    else if (cartIndex === activeItemCartIndex && cartItem.type === 'shake')
+      history.push('/shakes');
   };
 
   return (
@@ -48,7 +49,9 @@ const Cart = ({ history }) => {
             key={index}
             cartIndex={index}
             cartItem={cartItem}
-            deleteHandler={(index) => deleteHandler(index)}
+            deleteHandler={(cartItem, cartIndex) =>
+              deleteHandler(cartItem, cartIndex)
+            }
           />
         ))}
       </div>

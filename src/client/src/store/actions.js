@@ -5,6 +5,7 @@ const setList = (store, payload) => {
 
 const addToCart = (store, payload) => {
   const newCart = [...store.state.cart, payload.cartData];
+  store.setState({ activeItemCartIndex: payload.cartIndex });
   store.setState({ cart: newCart });
 };
 
@@ -35,8 +36,13 @@ const removeExtras = (store, payload) => {
 };
 
 const removeFromCart = (store, payload) => {
+  let currentItemIndex = store.state.activeItemCartIndex;
   let newCart = [...store.state.cart];
   newCart.splice(payload.cartIndex, 1);
+
+  if (payload.cartIndex < currentItemIndex)
+    store.setState({ activeItemCartIndex: currentItemIndex - 1 });
+
   store.setState({ cart: newCart });
 };
 

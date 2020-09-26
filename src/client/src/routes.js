@@ -31,13 +31,8 @@ export default [
     component: ShakesList,
   },
   {
-    path: '/customization/toppings/:id',
+    path: '/customization',
     layout: DefaultLayout,
     component: ToppingsList,
-  },
-  {
-    path: '/customization/combos/:id',
-    layout: DefaultLayout,
-    component: CoffeeList,
   },
 ];

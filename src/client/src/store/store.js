@@ -5,6 +5,7 @@ import globalHook from './useGlobalHook';
 const initialState = {
   coffeeList: [],
   shakesList: [],
+  activeItemCartIndex: 0,
   cart: [],
 };
 

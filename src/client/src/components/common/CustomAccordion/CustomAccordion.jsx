@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -5,10 +8,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import React, { useState } from 'react';
 import customAccordionStyles from './styles/CustomAccordionStyles';
 
+import useGlobal from '../../../store/store';
+
 export const CustomAccordion = ({ cartIndex, cartItem, deleteHandler }) => {
+  const location = useLocation();
   const {
     root,
     heading,
@@ -17,6 +22,17 @@ export const CustomAccordion = ({ cartIndex, cartItem, deleteHandler }) => {
     extraItemWrapper,
   } = customAccordionStyles();
   const [expanded, setExpanded] = useState(false);
+
+  const [storeState] = useGlobal();
+  const { activeItemCartIndex } = storeState;
+
+  useEffect(() => {
+    if (
+      location.pathname.includes('customization') &&
+      cartIndex === activeItemCartIndex
+    )
+      setExpanded(true);
+  }, [activeItemCartIndex, cartIndex, location.pathname]);
 
   return (
     <div className={root}>
@@ -38,9 +54,7 @@ export const CustomAccordion = ({ cartIndex, cartItem, deleteHandler }) => {
               <p style={{ marginLeft: '2%' }}>Delete item</p>
               <IconButton
                 aria-label="cart-delete"
-                onClick={(cartItem, cartIndex) =>
-                  deleteHandler(cartItem, cartIndex)
-                }
+                onClick={() => deleteHandler(cartItem, cartIndex)}
               >
                 <DeleteForeverIcon />
               </IconButton>

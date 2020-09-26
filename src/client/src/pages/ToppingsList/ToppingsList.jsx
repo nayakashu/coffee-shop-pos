@@ -1,6 +1,5 @@
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { getToppings } from '../../services/get-toppings';
 import useGlobal from '../../store/store';
@@ -8,13 +7,12 @@ import { GreenCheckbox } from './styles/ToppingsListStyles';
 import './ToppingsList.scss';
 
 export const ToppingsList = () => {
-  let { id } = useParams();
-
   const [loading, setLoading] = useState(true);
   const [toppingsList, setToppingsList] = useState([]);
   const [checkedState, setcheckedState] = useState({});
 
-  const [, storeActions] = useGlobal();
+  const [storeState, storeActions] = useGlobal();
+  const { activeItemCartIndex } = storeState;
   const { addExtras, removeExtras } = storeActions;
 
   useEffect(() => {
@@ -47,7 +45,7 @@ export const ToppingsList = () => {
 
   const handleChange = ({ target: { name, checked } }, price, toppingId) => {
     let payload = {
-      cartIndex: id,
+      cartIndex: activeItemCartIndex,
       extras: {
         id: toppingId,
         name: name,

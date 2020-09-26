@@ -1,7 +1,6 @@
 import Badge from '@material-ui/core/Badge';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 240;
 const rightDrawerWidth = 350;
 
 export const StyledBadge = withStyles((theme) => ({
@@ -14,28 +13,8 @@ export const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 
 export default makeStyles((theme) => ({
-  listRoot: {
-    marginTop: theme.spacing(1),
-  },
   root: {
     display: 'flex',
-  },
-  drawer: {
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    '@media (max-width:840px)': {
-      display: 'none',
-    },
-  },
-  active: {
-    backgroundColor: '#5C5C5C',
-    opacity: 0.9,
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#5C5C5C',
-    },
   },
   rightDrawer: {
     [theme.breakpoints.up('sm')]: {
@@ -43,6 +22,15 @@ export default makeStyles((theme) => ({
       flexShrink: 0,
     },
     '@media (max-width:840px)': {
+      display: 'none',
+    },
+  },
+  rightTemporaryDrawerPaper: {
+    [theme.breakpoints.up('sm')]: {
+      width: rightDrawerWidth,
+      flexShrink: 0,
+    },
+    '@media (min-width:840px)': {
       display: 'none',
     },
   },
@@ -54,18 +42,8 @@ export default makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   toolbar: theme.mixins.toolbar,
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    '@media (min-width:840px)': {
-      display: 'none',
-    },
-  },
   content: {
     width: '100%',
-    height: 'calc(100vh - 64px)',
     padding: theme.spacing(3),
   },
   closeMenuButton: {
@@ -74,10 +52,5 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-  },
-  arrowForwardIcon: {
-    '&:hover': {
-      backgroundColor: 'inherit !important',
-    },
   },
 }));
