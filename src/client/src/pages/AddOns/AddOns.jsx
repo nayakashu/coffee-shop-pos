@@ -1,14 +1,14 @@
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import React, { useEffect, useState } from 'react';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
-import { getToppings } from '../../services/get-toppings';
+import { getAddOns } from '../../services/get-addons';
 import useGlobal from '../../store/store';
-import { GreenCheckbox } from './styles/ToppingsListStyles';
-import './ToppingsList.scss';
+import { GreenCheckbox } from './styles/AddOnsStyles';
+import './AddOns.scss';
 
-export const ToppingsList = () => {
+export const AddOns = () => {
   const [loading, setLoading] = useState(true);
-  const [toppingsList, setToppingsList] = useState([]);
+  const [AddOns, setAddOns] = useState([]);
   const [checkedState, setcheckedState] = useState({});
 
   const [storeState, storeActions] = useGlobal();
@@ -19,7 +19,7 @@ export const ToppingsList = () => {
     (async () => {
       let checkedState = {};
 
-      const response = await getToppings('toppings');
+      const response = await getAddOns('toppings');
 
       if (!response) {
         return;
@@ -31,11 +31,11 @@ export const ToppingsList = () => {
       } = response;
 
       if (status === 200) {
-        setToppingsList(list);
+        setAddOns(list);
       }
 
-      list.forEach((topping) => {
-        checkedState = { ...checkedState, [topping.title]: false };
+      list.forEach((addOn) => {
+        checkedState = { ...checkedState, [addOn.title]: false };
       });
 
       setcheckedState(checkedState);
@@ -43,11 +43,11 @@ export const ToppingsList = () => {
     })();
   }, []);
 
-  const handleChange = ({ target: { name, checked } }, price, toppingId) => {
+  const handleChange = ({ target: { name, checked } }, price, addOnId) => {
     let payload = {
       cartIndex: activeItemCartIndex,
-      extras: {
-        id: toppingId,
+      addOns: {
+        id: addOnId,
         name: name,
         price,
       },
@@ -66,20 +66,20 @@ export const ToppingsList = () => {
   };
 
   return (
-    <div className="topping-container">
+    <div className="addon-container">
       {loading && <PageLoader />}
       {Object.values(checkedState).length > 0 &&
-        toppingsList.map((topping, index) => (
+        AddOns.map((addon, index) => (
           <FormControlLabel
             key={index}
             control={
               <GreenCheckbox
-                checked={checkedState[topping.title]}
-                onChange={(e) => handleChange(e, topping.price, topping.id)}
-                name={topping.title}
+                checked={checkedState[addon.title]}
+                onChange={(e) => handleChange(e, addon.price, addon.id)}
+                name={addon.title}
               />
             }
-            label={`${topping.title} - CAD ${topping.price}`}
+            label={`${addon.title} - CAD ${addon.price}`}
           />
         ))}
     </div>

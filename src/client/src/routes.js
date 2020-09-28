@@ -1,22 +1,23 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import { DefaultLayout, Landing } from './layouts';
+import { CheckoutLayout, DefaultLayout, LandingLayout } from './layouts';
 import { CoffeeList } from './pages/CoffeeList/CoffeeList';
 import { Home } from './pages/Home/Home';
+import { OrderSummary } from './pages/OrderSummary/OrderSummary';
 import { ShakesList } from './pages/ShakesList/ShakesList';
-import { ToppingsList } from './pages/ToppingsList/ToppingsList';
+import { AddOns } from './pages/AddOns/AddOns';
 
 export default [
   {
     path: '/',
     exact: true,
-    layout: DefaultLayout,
+    layout: LandingLayout,
     component: () => <Redirect to="/home" />,
   },
   {
     path: '/home',
     exact: true,
-    layout: Landing,
+    layout: LandingLayout,
     component: Home,
   },
   {
@@ -31,8 +32,13 @@ export default [
     component: ShakesList,
   },
   {
-    path: '/customization',
+    path: '/addons',
     layout: DefaultLayout,
-    component: ToppingsList,
+    component: AddOns,
+  },
+  {
+    path: '/order-summary',
+    layout: CheckoutLayout,
+    component: OrderSummary,
   },
 ];

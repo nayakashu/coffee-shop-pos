@@ -19,8 +19,8 @@ const Cart = ({ history }) => {
     let price = 0;
     cart.forEach((item) => {
       price = price + item.price;
-      if (item.extras) {
-        item.extras.forEach((extraItem) => {
+      if (item.addOns) {
+        item.addOns.forEach((extraItem) => {
           price = price + extraItem.price;
         });
       }
@@ -28,7 +28,7 @@ const Cart = ({ history }) => {
     settotalPrice(price);
   }, [cart]);
 
-  const deleteHandler = (cartItem, cartIndex) => {
+  const handleDeleteItem = (cartItem, cartIndex) => {
     removeFromCart({ cartIndex });
     if (cartIndex === activeItemCartIndex && cartItem.type === 'coffee')
       history.push('/coffee');
@@ -50,7 +50,7 @@ const Cart = ({ history }) => {
             cartIndex={index}
             cartItem={cartItem}
             deleteHandler={(cartItem, cartIndex) =>
-              deleteHandler(cartItem, cartIndex)
+              handleDeleteItem(cartItem, cartIndex)
             }
           />
         ))}
@@ -62,6 +62,7 @@ const Cart = ({ history }) => {
           size="large"
           className={button}
           endIcon={<ShoppingCartIcon />}
+          onClick={() => history.push('/order-summary')}
         >
           Checkout
         </Button>

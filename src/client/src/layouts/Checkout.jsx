@@ -3,19 +3,24 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import HomeSharpIcon from '@material-ui/icons/HomeSharp';
 import React from 'react';
 import CoffeeLogo from '../assets/vectors/coffee.svg';
-import landingStyles from './styles/LandingStyles';
+import checkoutStyles from './styles/CheckoutStyles';
 
-function LandingLayout({ children }) {
-  const { root, appBar, title, content, toolbar } = landingStyles();
+function CheckoutLayout({ children, history }) {
+  const { root, appBar, title, content, toolbar } = checkoutStyles();
 
   return (
     <div className={root}>
       <CssBaseline />
       <AppBar position="fixed" className={appBar}>
         <Toolbar>
-          <IconButton aria-label="Coffee Shop Logo" color="inherit">
+          <IconButton
+            aria-label="Coffee Shop Logo"
+            color="inherit"
+            onClick={() => history.push('/')}
+          >
             <img
               src={CoffeeLogo}
               style={{ height: '50px', width: '50px' }}
@@ -25,6 +30,9 @@ function LandingLayout({ children }) {
           <Typography variant="h6" noWrap className={title}>
             Coffee Shop
           </Typography>
+          <IconButton aria-label="home" onClick={() => history.push('/')}>
+            <HomeSharpIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <div className={content}>
@@ -35,4 +43,4 @@ function LandingLayout({ children }) {
   );
 }
 
-export default LandingLayout;
+export default CheckoutLayout;

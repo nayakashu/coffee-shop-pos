@@ -1,4 +1,5 @@
+import CheckoutLayout from './Checkout';
 import DefaultLayout from './Default';
-import Landing from './Landing';
+import LandingLayout from './Landing';
 
-export { DefaultLayout, Landing };
+export { DefaultLayout, LandingLayout, CheckoutLayout };

@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -8,9 +5,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import customAccordionStyles from './styles/CustomAccordionStyles';
-
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import useGlobal from '../../../store/store';
+import customAccordionStyles from './styles/CustomAccordionStyles';
 
 export const CustomAccordion = ({ cartIndex, cartItem, deleteHandler }) => {
   const location = useLocation();
@@ -28,7 +26,7 @@ export const CustomAccordion = ({ cartIndex, cartItem, deleteHandler }) => {
 
   useEffect(() => {
     if (
-      location.pathname.includes('customization') &&
+      location.pathname.includes('addons') &&
       cartIndex === activeItemCartIndex
     )
       setExpanded(true);
@@ -59,7 +57,7 @@ export const CustomAccordion = ({ cartIndex, cartItem, deleteHandler }) => {
                 <DeleteForeverIcon />
               </IconButton>
             </div>
-            {cartItem?.extras?.map((extraItem, index) => (
+            {cartItem?.addOns?.map((extraItem, index) => (
               <div key={index} className={extraItemWrapper}>
                 <Typography
                   className={heading}

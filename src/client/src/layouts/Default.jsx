@@ -42,9 +42,7 @@ function DefaultLayout({ children, history }) {
       <AppBar position="fixed" className={appBar}>
         <Toolbar>
           <IconButton
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
+            aria-label="Coffee Shop Logo"
             onClick={() => history.push('/')}
             color="inherit"
           >

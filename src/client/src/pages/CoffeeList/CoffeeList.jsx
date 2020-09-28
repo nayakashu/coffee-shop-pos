@@ -36,7 +36,7 @@ export const CoffeeList = ({ history }) => {
 
   const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData, cartIndex });
-    history.push('/customization');
+    history.push('/addons');
   };
 
   return (
