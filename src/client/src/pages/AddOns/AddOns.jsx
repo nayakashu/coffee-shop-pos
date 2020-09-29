@@ -1,9 +1,9 @@
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import React, { useEffect, useState } from 'react';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { getAddOns } from '../../services/get-addons';
 import useGlobal from '../../store/store';
-import { GreenCheckbox } from './styles/AddOnsStyles';
+import AddonCard from '../../components/common/AddonCard/AddonCard';
+import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
 import './AddOns.scss';
 
 export const AddOns = () => {
@@ -70,16 +70,13 @@ export const AddOns = () => {
       {loading && <PageLoader />}
       {Object.values(checkedState).length > 0 &&
         AddOns.map((addon, index) => (
-          <FormControlLabel
+          <AddonCard
             key={index}
-            control={
-              <GreenCheckbox
-                checked={checkedState[addon.title]}
-                onChange={(e) => handleChange(e, addon.price, addon.id)}
-                name={addon.title}
-              />
-            }
-            label={`${addon.title} - CAD ${addon.price}`}
+            cardImage={CoffeeCardImage}
+            checked={checkedState[addon.title]}
+            price={addon.price}
+            onChange={(e) => handleChange(e, addon.price, addon.id)}
+            name={addon.title}
           />
         ))}
     </div>
