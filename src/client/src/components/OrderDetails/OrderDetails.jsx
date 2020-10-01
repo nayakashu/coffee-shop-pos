@@ -25,14 +25,10 @@ export const OrderDetails = ({
       <CardMedia className={media} image={cardImage} title={title} />
       <div className={details}>
         <CardContent className={product}>
-          <Typography component="h4" variant="h4">
-            {productName}
-          </Typography>
+          <Typography variant="h5">{productName}</Typography>
         </CardContent>
         <div className={productDetails}>
-          <Typography component="h6" variant="h6">
-            {`CDN$ ${price}`}
-          </Typography>
+          <Typography variant="body1">{`$ ${price}`}</Typography>
           <Typography variant="subtitle1" color="textSecondary">
             {addOns.length ? `Add-Ons: ${addOns.join(', ')}` : null}
           </Typography>
