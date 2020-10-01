@@ -13,7 +13,7 @@ const Cart = ({ history }) => {
 
   const [storeState, storeActions] = useGlobal();
   const { cart, activeItemCartIndex } = storeState;
-  const { removeFromCart } = storeActions;
+  const { removeFromCart, changeActiveItemIndex } = storeActions;
 
   useEffect(() => {
     let price = 0;
@@ -36,6 +36,11 @@ const Cart = ({ history }) => {
       history.push('/shakes');
   };
 
+  const handleCustomizeItem = (cartIndex) => {
+    changeActiveItemIndex({ cartIndex });
+    history.push('/addons');
+  };
+
   return (
     <div className="cart-container">
       <div className="toolbar"></div>
@@ -49,9 +54,8 @@ const Cart = ({ history }) => {
             key={index}
             cartIndex={index}
             cartItem={cartItem}
-            deleteHandler={(cartItem, cartIndex) =>
-              handleDeleteItem(cartItem, cartIndex)
-            }
+            deleteHandler={handleDeleteItem}
+            customizeHandler={handleCustomizeItem}
           />
         ))}
       </div>

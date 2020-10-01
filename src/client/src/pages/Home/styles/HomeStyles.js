@@ -3,16 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   image: {
     position: 'relative',
-    height: 250,
-    width: '25%',
-    [theme.breakpoints.down('md')]: {
-      width: '30%',
+    height: '500px',
+    width: '500px',
+    '@media (max-width:1250px)': {
+      height: '400px',
+      width: '400px',
     },
-    '@media (max-width:1300px)': {
-      width: '30%',
-    },
-    '@media (max-width:768px)': {
-      width: '75%',
+    '@media (max-width:968px)': {
+      height: '300px',
+      width: '300px',
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
@@ -40,6 +39,7 @@ export default makeStyles((theme) => ({
     color: theme.palette.common.white,
   },
   imageSrc: {
+    borderRadius: '50%',
     position: 'absolute',
     left: 0,
     right: 0,
@@ -47,7 +47,6 @@ export default makeStyles((theme) => ({
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
-    borderRadius: '5px',
   },
   imageBackdrop: {
     position: 'absolute',
@@ -55,16 +54,20 @@ export default makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: 'transparent',
     opacity: 0.4,
     transition: theme.transitions.create('opacity'),
     borderRadius: '5px',
   },
   imageTitle: {
     position: 'relative',
+    fontSize: '2rem',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
     }px`,
+    '@media (max-width:968px)': {
+      fontSize: '1.5rem',
+    },
   },
   imageMarked: {
     height: 3,

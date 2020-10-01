@@ -6,8 +6,10 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     cursor: 'pointer',
     width: '32%',
+    marginTop: '12px',
     marginBottom: theme.spacing(2),
     justifyContent: 'space-between',
+    borderRadius: 0,
     [theme.breakpoints.down('md')]: {
       width: '48%',
     },
@@ -32,13 +34,21 @@ export default makeStyles((theme) => ({
     height: 180,
   },
   addBtnContainer: {
-    padding: theme.spacing(1),
     width: '100%',
     display: 'flex',
-    justifyContent: 'flex-end',
   },
   addBtn: {
+    width: '100%',
+    height: '50px',
+    borderRadius: 0,
+    fontSize: '1.2rem',
+    backgroundColor: '#05643C',
+    color: 'white',
     padding: theme.spacing(1),
-    width: '40%',
+    '&:hover': {
+      backgroundColor: '#ffcb5b',
+      color: '#40290F',
+      borderColor: 'transparent',
+    },
   },
 }));

@@ -12,7 +12,7 @@ export const AddOns = () => {
   const [checkedState, setcheckedState] = useState({});
 
   const [storeState, storeActions] = useGlobal();
-  const { activeItemCartIndex } = storeState;
+  const { cart, activeItemCartIndex } = storeState;
   const { addExtras, removeExtras } = storeActions;
 
   useEffect(() => {
@@ -38,10 +38,16 @@ export const AddOns = () => {
         checkedState = { ...checkedState, [addOn.title]: false };
       });
 
+      cart[activeItemCartIndex] &&
+        cart[activeItemCartIndex].addOns &&
+        cart[activeItemCartIndex].addOns.forEach((addOn) => {
+          checkedState[addOn.name] = true;
+        });
+
       setcheckedState(checkedState);
       setLoading(false);
     })();
-  }, []);
+  }, [cart, activeItemCartIndex]);
 
   const handleChange = ({ target: { name, checked } }, price, addOnId) => {
     let payload = {

@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     width: '32%',
+    borderRadius: 0,
     marginBottom: theme.spacing(2),
     justifyContent: 'space-between',
     [theme.breakpoints.down('md')]: {
@@ -23,5 +24,8 @@ export default makeStyles((theme) => ({
   media: {
     width: '100%',
     height: 180,
+  },
+  cardActions: {
+    padding: 0,
   },
 }));

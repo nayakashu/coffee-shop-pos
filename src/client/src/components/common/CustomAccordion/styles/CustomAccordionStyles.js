@@ -15,12 +15,16 @@ export default makeStyles((theme) => ({
   },
   detailsHeader: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    backgroundColor: 'white',
   },
   extraItemWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
     padding: theme.spacing(1),
+  },
+  detailsRoot: {
+    paddingTop: 0,
   },
 }));

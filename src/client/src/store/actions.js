@@ -46,12 +46,17 @@ const removeFromCart = (store, payload) => {
   store.setState({ cart: newCart });
 };
 
+const changeActiveItemIndex = (store, payload) => {
+  store.setState({ activeItemCartIndex: payload.cartIndex });
+};
+
 const actions = {
   setList,
   addToCart,
   removeFromCart,
   addExtras,
   removeExtras,
+  changeActiveItemIndex,
 };
 
 export default actions;

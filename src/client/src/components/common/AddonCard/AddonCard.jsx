@@ -9,7 +9,7 @@ import AddonCardStyles from './styles/AddonCardStyles';
 import './AddonCard.scss';
 
 const AddonCard = (props) => {
-  const { root, media } = AddonCardStyles();
+  const { root, media, cardActions } = AddonCardStyles();
   return (
     <Card className={root}>
       <CardMedia
@@ -20,7 +20,7 @@ const AddonCard = (props) => {
       <CardContent className="addOn-card-content">
         <h2>{`${props.name} - CAD ${props.price}`}</h2>
       </CardContent>
-      <CardActions>
+      <CardActions className={cardActions}>
         <div className="inputGroup">
           <input
             id={props.name}
