@@ -10,7 +10,7 @@ export const OrderDetails = ({
   title,
   productName,
   price,
-  addOns,
+  addons,
 }) => {
   const {
     root,
@@ -28,9 +28,11 @@ export const OrderDetails = ({
           <Typography variant="h5">{productName}</Typography>
         </CardContent>
         <div className={productDetails}>
-          <Typography variant="body1">{`$ ${price}`}</Typography>
+          <Typography variant="body1">{`$ ${Number(price).toFixed(
+            2
+          )}`}</Typography>
           <Typography variant="subtitle1" color="textSecondary">
-            {addOns.length ? `Add-Ons: ${addOns.join(', ')}` : null}
+            {addons.length ? `Add-Ons: ${addons.join(', ')}` : null}
           </Typography>
         </div>
       </div>

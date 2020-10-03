@@ -4,18 +4,18 @@ import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { ProductCard } from '../../components/common/ProductCard/ProductCard';
 import { getListing } from '../../services/get-listing';
 import useGlobal from '../../store/store';
-import './CoffeeList.scss';
+import './Lattes.scss';
 
-export const CoffeeList = ({ history }) => {
+export const Lattes = ({ history }) => {
   const [loading, setLoading] = useState(true);
   const [storeState, storeActions] = useGlobal();
 
-  const { cart, coffeeList } = storeState;
+  const { cart, lattes } = storeState;
   const { setList, addToCart } = storeActions;
 
   useEffect(() => {
     (async () => {
-      const response = await getListing('coffee');
+      const response = await getListing('lattes');
 
       if (!response) {
         return;
@@ -27,7 +27,7 @@ export const CoffeeList = ({ history }) => {
       } = response;
 
       if (status === 200) {
-        setList({ listName: 'coffeeList', list });
+        setList({ listName: 'lattes', list });
       }
 
       setLoading(false);
@@ -36,22 +36,22 @@ export const CoffeeList = ({ history }) => {
 
   const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData, cartIndex });
-    history.push('/addons');
+    history.push('/addons/lattes');
   };
 
   return (
-    <div className="coffee-container">
+    <div className="lattes-container">
       {loading ? (
         <PageLoader />
       ) : (
-        coffeeList.map((coffee, index) => (
+        lattes.map((latte, index) => (
           <ProductCard
             key={index}
             indexValue={cart.length}
             cardImage={CoffeeCardImage}
-            title={coffee.title}
-            description={coffee.description}
-            data={coffee}
+            title={latte.title}
+            description={latte.description}
+            data={latte}
             addHandler={addCartData}
           ></ProductCard>
         ))

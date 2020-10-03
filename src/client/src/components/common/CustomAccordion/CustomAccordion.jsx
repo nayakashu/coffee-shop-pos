@@ -3,8 +3,8 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import EditIcon from '@material-ui/icons/Edit';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -69,14 +69,14 @@ export const CustomAccordion = ({
                 <DeleteForeverIcon />
               </IconButton>
             </div>
-            {cartItem?.addOns?.map((extraItem, index) => (
+            {cartItem?.addons?.map((extraItem, index) => (
               <div key={index} className={extraItemWrapper}>
                 <Typography
                   className={heading}
                 >{`${extraItem.name}`}</Typography>
                 <Typography
                   className={heading}
-                >{`CAD ${extraItem.price}`}</Typography>
+                >{`$ ${extraItem.price}`}</Typography>
               </div>
             ))}
           </div>

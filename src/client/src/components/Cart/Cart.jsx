@@ -9,31 +9,42 @@ import cartStyles from './styles/CartStyles';
 
 const Cart = ({ history }) => {
   const { button } = cartStyles();
-  const [totalPrice, settotalPrice] = useState(0);
+  const [amount, setAmount] = useState(0);
 
   const [storeState, storeActions] = useGlobal();
   const { cart, activeItemCartIndex } = storeState;
   const { removeFromCart, changeActiveItemIndex } = storeActions;
 
   useEffect(() => {
-    let price = 0;
-    cart.forEach((item) => {
-      price = price + item.price;
-      if (item.addOns) {
-        item.addOns.forEach((extraItem) => {
-          price = price + extraItem.price;
+    let cost = 0;
+
+    cart.forEach(({ price: itemPrice, addons }) => {
+      cost += Number(itemPrice);
+      if (Array.isArray(addons) && addons.length) {
+        addons.forEach(({ price: addonPrice }) => {
+          cost += Number(addonPrice);
         });
       }
     });
-    settotalPrice(price);
+    setAmount(Number(cost).toFixed(2));
   }, [cart]);
 
   const handleDeleteItem = (cartItem, cartIndex) => {
     removeFromCart({ cartIndex });
-    if (cartIndex === activeItemCartIndex && cartItem.type === 'coffee')
-      history.push('/coffee');
-    else if (cartIndex === activeItemCartIndex && cartItem.type === 'shake')
-      history.push('/shakes');
+
+    if (
+      cartIndex === activeItemCartIndex &&
+      cartItem.type === 'drippedCoffee'
+    ) {
+      history.push('/dripped-coffees');
+    } else if (cartIndex === activeItemCartIndex && cartItem.type === 'latte') {
+      history.push('/lattes');
+    } else if (
+      cartIndex === activeItemCartIndex &&
+      cartItem.type === 'smoothie'
+    ) {
+      history.push('/smoothies');
+    }
   };
 
   const handleCustomizeItem = (cartIndex) => {
@@ -60,7 +71,7 @@ const Cart = ({ history }) => {
         ))}
       </div>
       <div className="checkout-button">
-        <div className="price-wrapper">{`Total Cost = CAD ${totalPrice}`}</div>
+        <div className="price-wrapper">{`Amount: $ ${amount}`}</div>
         <Button
           variant="contained"
           size="large"

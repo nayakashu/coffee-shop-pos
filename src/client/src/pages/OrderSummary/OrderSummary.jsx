@@ -13,12 +13,12 @@ export const OrderSummary = () => {
   return (
     <div className="order-summary-container">
       <div className="order-details-container">
-        {cart.map(({ addOns, type, title, price }, index) => {
+        {cart.map(({ addons, type, title, price }, index) => {
           const addOnNames = [];
           let addOnTotalPrice = 0;
 
-          if (Array.isArray(addOns) && addOns.length) {
-            addOns.map((addOn) => {
+          if (Array.isArray(addons) && addons.length) {
+            addons.map((addOn) => {
               addOnNames.push(addOn.name);
               addOnTotalPrice += Number(addOn.price);
 
@@ -30,13 +30,14 @@ export const OrderSummary = () => {
             <OrderDetails
               key={index}
               cardImage={
-                (type === 'coffee' && CoffeeCardImage) ||
-                (type === 'shake' && ShakesCardImage)
+                (type === 'drippedCoffee' && CoffeeCardImage) ||
+                (type === 'latte' && CoffeeCardImage) ||
+                (type === 'smoothie' && ShakesCardImage)
               }
               title={title}
               productName={title}
               price={Number(price) + Number(addOnTotalPrice)}
-              addOns={addOnNames}
+              addons={addOnNames}
             />
           );
         })}

@@ -1,12 +1,14 @@
 import express from 'express';
-import { getCoffeeListing } from './coffee/get-coffee-listing';
-import { getShakesListing } from './shakes/get-shakes-listing';
-import { getToppingsListing } from './toppings/get-toppings-listing';
+import { getAddons } from './addons/get-addons';
+import { getDrippedCoffees } from './dripped-coffees/get-dripped-coffees';
+import { getLattes } from './lattes/get-lattes';
+import { getSmoothies } from './smoothies/get-smoothies';
 
 const router = express.Router();
 
-router.get('/coffee', getCoffeeListing);
-router.get('/shakes', getShakesListing);
-router.get('/toppings', getToppingsListing);
+router.get('/dripped-coffees', getDrippedCoffees);
+router.get('/lattes', getLattes);
+router.get('/smoothies', getSmoothies);
+router.get('/addons', getAddons);
 
 export default router;

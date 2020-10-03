@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "title": "Short",
+      "price": 0
+    },
+    {
+      "id": 2,
+      "title": "Tall",
+      "price": 0.2
+    },
+    {
+      "id": 3,
+      "title": "Grande",
+      "price": 0.5
+    },
+    {
+      "id": 4,
+      "title": "Venti",
+      "price": 1
+    }
+  ]
+}

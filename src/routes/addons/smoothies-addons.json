@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "title": "Chocolate Powder",
+      "price": 0.5
+    },
+    {
+      "id": 2,
+      "title": "Vanilla Powder",
+      "price": 0.5
+    },
+    {
+      "id": 3,
+      "title": "Shots",
+      "price": 1
+    },
+    {
+      "id": 4,
+      "title": "Lactose-Free Beverage",
+      "price": 0.95
+    },
+    {
+      "id": 5,
+      "title": "Heavy Cream",
+      "price": 0.95
+    },
+    {
+      "id": 6,
+      "title": "Additional Frappuccino Roast",
+      "price": 0.6
+    }
+  ]
+}

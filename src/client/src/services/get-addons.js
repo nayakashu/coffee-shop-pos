@@ -1,7 +1,7 @@
 import { httpGet } from './http';
 
-export const getAddOns = async (url) => {
-  const result = await httpGet(url);
+export const getAddons = async (url, params) => {
+  const result = await httpGet(url, null, null, params);
 
   return result;
 };

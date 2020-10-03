@@ -1,11 +1,12 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { CheckoutLayout, DefaultLayout, LandingLayout } from './layouts';
-import { CoffeeList } from './pages/CoffeeList/CoffeeList';
+import { Addons } from './pages/Addons/Addons';
+import { DrippedCoffees } from './pages/DrippedCoffees/DrippedCoffees';
 import { Home } from './pages/Home/Home';
+import { Lattes } from './pages/Lattes/Lattes';
 import { OrderSummary } from './pages/OrderSummary/OrderSummary';
-import { ShakesList } from './pages/ShakesList/ShakesList';
-import { AddOns } from './pages/AddOns/AddOns';
+import { Smoothies } from './pages/Smoothies/Smoothies';
 
 export default [
   {
@@ -21,20 +22,26 @@ export default [
     component: Home,
   },
   {
-    path: '/coffee',
+    path: '/dripped-coffees',
     exact: true,
     layout: DefaultLayout,
-    component: CoffeeList,
+    component: DrippedCoffees,
   },
   {
-    path: '/shakes',
+    path: '/lattes',
+    exact: true,
     layout: DefaultLayout,
-    component: ShakesList,
+    component: Lattes,
   },
   {
-    path: '/addons',
+    path: '/smoothies',
     layout: DefaultLayout,
-    component: AddOns,
+    component: Smoothies,
+  },
+  {
+    path: '/addons/:type',
+    layout: DefaultLayout,
+    component: Addons,
   },
   {
     path: '/order-summary',

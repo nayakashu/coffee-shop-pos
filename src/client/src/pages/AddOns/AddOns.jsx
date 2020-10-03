@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import PageLoader from '../../components/common/PageLoader/PageLoader';
-import { getAddOns } from '../../services/get-addons';
-import useGlobal from '../../store/store';
-import AddonCard from '../../components/common/AddonCard/AddonCard';
+import { useParams } from 'react-router-dom';
 import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
-import './AddOns.scss';
+import AddonCard from '../../components/common/AddonCard/AddonCard';
+import PageLoader from '../../components/common/PageLoader/PageLoader';
+import { getAddons } from '../../services/get-addons';
+import useGlobal from '../../store/store';
+import './Addons.scss';
 
-export const AddOns = () => {
+export const Addons = () => {
+  let { type } = useParams();
   const [loading, setLoading] = useState(true);
-  const [AddOns, setAddOns] = useState([]);
+  const [addons, setAddons] = useState([]);
   const [checkedState, setcheckedState] = useState({});
 
   const [storeState, storeActions] = useGlobal();
@@ -19,7 +21,7 @@ export const AddOns = () => {
     (async () => {
       let checkedState = {};
 
-      const response = await getAddOns('toppings');
+      const response = await getAddons('addons', { type });
 
       if (!response) {
         return;
@@ -31,7 +33,7 @@ export const AddOns = () => {
       } = response;
 
       if (status === 200) {
-        setAddOns(list);
+        setAddons(list);
       }
 
       list.forEach((addOn) => {
@@ -39,20 +41,20 @@ export const AddOns = () => {
       });
 
       cart[activeItemCartIndex] &&
-        cart[activeItemCartIndex].addOns &&
-        cart[activeItemCartIndex].addOns.forEach((addOn) => {
+        cart[activeItemCartIndex].addons &&
+        cart[activeItemCartIndex].addons.forEach((addOn) => {
           checkedState[addOn.name] = true;
         });
 
       setcheckedState(checkedState);
       setLoading(false);
     })();
-  }, [cart, activeItemCartIndex]);
+  }, [cart, activeItemCartIndex, type]);
 
   const handleChange = ({ target: { name, checked } }, price, addOnId) => {
     let payload = {
       cartIndex: activeItemCartIndex,
-      addOns: {
+      addons: {
         id: addOnId,
         name: name,
         price,
@@ -72,10 +74,10 @@ export const AddOns = () => {
   };
 
   return (
-    <div className="addon-container">
+    <div className="addons-container">
       {loading && <PageLoader />}
       {Object.values(checkedState).length > 0 &&
-        AddOns.map((addon, index) => (
+        addons.map((addon, index) => (
           <AddonCard
             key={index}
             cardImage={CoffeeCardImage}

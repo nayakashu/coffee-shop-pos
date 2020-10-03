@@ -4,18 +4,18 @@ import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { ProductCard } from '../../components/common/ProductCard/ProductCard';
 import { getListing } from '../../services/get-listing';
 import useGlobal from '../../store/store';
-import './ShakesList.scss';
+import './Smoothies.scss';
 
-export const ShakesList = ({ history }) => {
+export const Smoothies = ({ history }) => {
   const [loading, setLoading] = useState(true);
   const [storeState, storeActions] = useGlobal();
 
-  const { cart, shakesList } = storeState;
+  const { cart, smoothies } = storeState;
   const { setList, addToCart } = storeActions;
 
   useEffect(() => {
     (async () => {
-      const response = await getListing('shakes');
+      const response = await getListing('smoothies');
 
       if (!response) {
         return;
@@ -27,7 +27,7 @@ export const ShakesList = ({ history }) => {
       } = response;
 
       if (status === 200) {
-        setList({ listName: 'shakesList', list });
+        setList({ listName: 'smoothies', list });
       }
 
       setLoading(false);
@@ -36,22 +36,22 @@ export const ShakesList = ({ history }) => {
 
   const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData, cartIndex });
-    history.push('/addons');
+    history.push('/addons/smoothies');
   };
 
   return (
-    <div className="shakes-container">
+    <div className="smoothies-container">
       {loading ? (
         <PageLoader />
       ) : (
-        shakesList.map((shake, index) => (
+        smoothies.map((smoothie, index) => (
           <ProductCard
             key={index}
             indexValue={cart.length}
             cardImage={ShakesCardImage}
-            title={shake.title}
-            description={shake.description}
-            data={shake}
+            title={smoothie.title}
+            description={smoothie.description}
+            data={smoothie}
             addHandler={addCartData}
           ></ProductCard>
         ))

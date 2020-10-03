@@ -1,6 +1,6 @@
 ## Coffee Shop POC
 
-This is the front-end application for a point-of-sale interface for ordering your customizes coffee and shakes from your favourite coffee shop.
+This is the front-end application for a point-of-sale interface for ordering your customised dripped coffee, lattes and smoothies from your favourite coffee shop.
 
 ### Run Locally
 

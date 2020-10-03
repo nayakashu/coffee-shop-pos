@@ -20,14 +20,14 @@ export const PaymentSummary = () => {
   const [storeState] = useGlobal();
   const { cart } = storeState;
 
-  const totalPrice = cart.reduce((cost, { price, addOns }) => {
-    if (Array.isArray(addOns) && addOns.length) {
+  const totalPrice = cart.reduce((cost, { price, addons }) => {
+    if (Array.isArray(addons) && addons.length) {
       return (
         Number(cost) +
         Number(price) +
         Number(
-          addOns.reduce(
-            (addOnsCost, { price }) => Number(addOnsCost) + Number(price),
+          addons.reduce(
+            (addonsCost, { price }) => Number(addonsCost) + Number(price),
             0
           )
         )

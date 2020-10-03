@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "type": "smoothie",
+      "title": "Coffee Frappuccino®",
+      "price": 5.35,
+      "description": "Coffee meets milk and ice in a blender for a rumble-and-tumble togetherness to create one of our most-beloved original Frappuccino® blended beverages."
+    },
+    {
+      "id": 2,
+      "type": "smoothie",
+      "title": "Java Chip",
+      "price": 5.45,
+      "description": "We blend mocha sauce and Frappuccino® chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle to bring you endless java joy."
+    },
+    {
+      "id": 3,
+      "type": "smoothie",
+      "title": "Caffè Vanilla",
+      "price": 5.45,
+      "description": "We take Frappuccino® roast coffee and vanilla bean powder, combine them with milk and ice, topped with whipped cream. Tastes like happiness."
+    },
+    {
+      "id": 4,
+      "type": "smoothie",
+      "title": "Caramel Ribbon Crunch",
+      "price": 5.75,
+      "description": "Buttery caramel syrup blended with coffee, milk and ice, then topped with a layer of dark caramel sauce, whipped cream, caramel drizzle and a crunchy caramel-sugar topping—oh-so-beautifully delicious."
+    },
+    {
+      "id": 5,
+      "type": "smoothie",
+      "title": "Vanilla Bean Crème",
+      "price": 5.35,
+      "description": "This rich and creamy blend of vanilla bean, milk and ice topped with whipped cream takes va-va-vanilla flavour to another level. To change things up, try it affogato-style with a hot espresso shot poured right over the top."
+    },
+    {
+      "id": 6,
+      "type": "smoothie",
+      "title": "Chai Crème ",
+      "price": 5.45,
+      "description": "A creamy blend of spicy chai, milk and ice, finished with sweetened whipped cream and a sprinkle of cinnamon. Specially made to spice up your afternoon treat."
+    }
+  ]
+}

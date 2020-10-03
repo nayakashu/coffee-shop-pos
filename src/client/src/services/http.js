@@ -8,13 +8,14 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
-const http = async (url, body, method = 'get', headers) => {
+const http = async (url, body, method = 'get', headers, params) => {
   try {
     const { data, status } = await axiosInstance({
       method,
       url,
       data: body,
       headers,
+      params,
     });
 
     return { data, status };
@@ -23,8 +24,8 @@ const http = async (url, body, method = 'get', headers) => {
   }
 };
 
-export const httpGet = async (url, body, headers) => {
-  return await http(url, body, 'get', headers);
+export const httpGet = async (url, body, headers, params) => {
+  return await http(url, body, 'get', headers, params);
 };
 
 export const httpPost = async (url, body, headers) => {

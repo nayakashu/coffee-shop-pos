@@ -53,4 +53,16 @@ export default makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  appBarLabel: {
+    fontSize: '1rem',
+    color: 'white',
+    cursor: 'pointer',
+    marginRight: '10px',
+    '&:hover': {
+      borderBottom: '2px solid white',
+    },
+  },
+  appBarIcon: {
+    color: 'white',
+  },
 }));

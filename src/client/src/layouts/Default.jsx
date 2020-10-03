@@ -24,6 +24,8 @@ function DefaultLayout({ children, history }) {
     rightDrawer,
     rightDrawerPaper,
     rightTemporaryDrawerPaper,
+    appBarIcon,
+    appBarLabel,
   } = defaultStyles();
 
   const [mobileCheckoutOpen, setMobileCheckoutOpen] = useState(false);
@@ -55,10 +57,33 @@ function DefaultLayout({ children, history }) {
           <Typography variant="h6" noWrap className={title}>
             Coffee Shop
           </Typography>
-          <IconButton aria-label="home" onClick={() => history.push('/')}>
+          <div
+            className={appBarLabel}
+            onClick={() => history.push('/dripped-coffees')}
+          >
+            Dripped Coffees
+          </div>
+          <div className={appBarLabel} onClick={() => history.push('/lattes')}>
+            Lattes
+          </div>
+          <div
+            className={appBarLabel}
+            onClick={() => history.push('/smoothies')}
+          >
+            Smoothies
+          </div>
+          <IconButton
+            aria-label="home"
+            className={appBarIcon}
+            onClick={() => history.push('/')}
+          >
             <HomeSharpIcon />
           </IconButton>
-          <IconButton aria-label="cart" onClick={handleRightDrawerToggle}>
+          <IconButton
+            aria-label="cart"
+            className={appBarIcon}
+            onClick={handleRightDrawerToggle}
+          >
             <StyledBadge badgeContent={cart.length} color="secondary">
               <ShoppingCartIcon />
             </StyledBadge>

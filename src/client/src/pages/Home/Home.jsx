@@ -17,21 +17,25 @@ export const Home = ({ history }) => {
     imageMarked,
   } = homeStyles();
 
-  const handleCoffeeCardClick = () => {
-    history.push('/coffee');
+  const handleDrippedCoffeeCardClick = () => {
+    history.push('/dripped-coffees');
   };
 
-  const handleShakeCardClick = () => {
-    history.push('/shakes');
+  const handleLattesCardClick = () => {
+    history.push('/lattes');
+  };
+
+  const handleSmoothiesCardClick = () => {
+    history.push('/smoothies');
   };
   return (
     <div className="home-container">
       <ButtonBase
         focusRipple
-        key={'Coffee'}
+        key={'Dripped Coffees'}
         className={image}
         focusVisibleClassName={focusVisible}
-        onClick={handleCoffeeCardClick}
+        onClick={handleDrippedCoffeeCardClick}
       >
         <span
           className={imageSrc}
@@ -47,17 +51,43 @@ export const Home = ({ history }) => {
             color="inherit"
             className={imageTitle}
           >
-            Coffee
+            Dripped Coffees
             <span className={imageMarked} />
           </Typography>
         </span>
       </ButtonBase>
       <ButtonBase
         focusRipple
-        key={'Shake'}
+        key={'Lattes'}
         className={image}
         focusVisibleClassName={focusVisible}
-        onClick={handleShakeCardClick}
+        onClick={handleLattesCardClick}
+      >
+        <span
+          className={imageSrc}
+          style={{
+            backgroundImage: `url(${CoffeeCardImage})`,
+          }}
+        />
+        <span className={imageBackdrop} />
+        <span className={imageButton}>
+          <Typography
+            component="span"
+            variant="subtitle1"
+            color="inherit"
+            className={imageTitle}
+          >
+            Lattes
+            <span className={imageMarked} />
+          </Typography>
+        </span>
+      </ButtonBase>
+      <ButtonBase
+        focusRipple
+        key={'Smoothies'}
+        className={image}
+        focusVisibleClassName={focusVisible}
+        onClick={handleSmoothiesCardClick}
       >
         <span
           className={imageSrc}
@@ -73,7 +103,7 @@ export const Home = ({ history }) => {
             color="inherit"
             className={imageTitle}
           >
-            Shakes
+            Smoothies
             <span className={imageMarked} />
           </Typography>
         </span>

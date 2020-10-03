@@ -13,10 +13,10 @@ const addExtras = (store, payload) => {
   const newCart = [...store.state.cart];
   const item = newCart[payload.cartIndex];
 
-  if (item.addOns) {
-    item.addOns = [...item.addOns, payload.addOns];
+  if (item.addons) {
+    item.addons = [...item.addons, payload.addons];
   } else {
-    item.addOns = [payload.addOns];
+    item.addons = [payload.addons];
   }
 
   newCart[payload.cartIndex] = item;
@@ -27,8 +27,8 @@ const removeExtras = (store, payload) => {
   const newCart = [...store.state.cart];
   const item = newCart[payload.cartIndex];
 
-  item.addOns = item.addOns.filter((extra) => {
-    return extra.id !== payload.addOns.id;
+  item.addons = item.addons.filter((extra) => {
+    return extra.id !== payload.addons.id;
   });
 
   newCart[payload.cartIndex] = item;

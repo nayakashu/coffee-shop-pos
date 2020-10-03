@@ -3,8 +3,9 @@ import actions from './actions';
 import globalHook from './useGlobalHook';
 
 const initialState = {
-  coffeeList: [],
-  shakesList: [],
+  drippedCoffees: [],
+  lattes: [],
+  smoothies: [],
   activeItemCartIndex: 0,
   cart: [],
 };
