@@ -55,7 +55,6 @@ const Cart = ({ history }) => {
   return (
     <div className="cart-container">
       <div className="toolbar"></div>
-      <div className="cart-title">Checkout Items: </div>
       <div className="cart-content-wrapper">
         {cart.length === 0 && (
           <h4 style={{ textAlign: 'center' }}>No items in cart</h4>

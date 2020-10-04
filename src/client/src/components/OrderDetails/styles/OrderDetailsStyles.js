@@ -13,13 +13,14 @@ export default makeStyles((theme) => ({
   media: {
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '25%',
+      width: '40%',
     },
     height: 250,
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
+    width: '60%',
   },
   product: {
     flex: '1 0 auto',

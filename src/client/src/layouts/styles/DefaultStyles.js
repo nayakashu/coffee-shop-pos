@@ -58,22 +58,24 @@ export default makeStyles((theme) => ({
     fontSize: '1rem',
     color: 'white',
     cursor: 'pointer',
-    marginRight: '10px',
+    marginRight: '20px',
     '&:hover': {
-      borderBottom: '2px solid white',
+      borderBottom: '2px solid #ffcb5b',
     },
     '@media (max-width:840px)': {
       display: 'none',
     },
   },
   appBarHomeIcon: {
-    color: 'white',
+    color: '#ffcb5b',
+    transform: 'scale(1.3)',
     '@media (max-width:840px)': {
       display: 'none',
     },
   },
   appBarCheckoutIcon: {
-    color: 'white',
+    transform: 'scale(1.3)',
+    color: '#ffcb5b',
   },
   menuButton: {
     '@media (min-width:840px)': {

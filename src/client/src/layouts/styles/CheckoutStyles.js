@@ -27,4 +27,8 @@ export default makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  appBarHomeIcon: {
+    transform: 'scale(1.3)',
+    color: '#ffcb5b',
+  },
 }));

@@ -9,7 +9,14 @@ import CoffeeLogo from '../assets/vectors/coffee.svg';
 import checkoutStyles from './styles/CheckoutStyles';
 
 function CheckoutLayout({ children, history }) {
-  const { root, appBar, title, content, toolbar } = checkoutStyles();
+  const {
+    root,
+    appBar,
+    title,
+    content,
+    toolbar,
+    appBarHomeIcon,
+  } = checkoutStyles();
 
   return (
     <div className={root}>
@@ -30,7 +37,11 @@ function CheckoutLayout({ children, history }) {
           <Typography variant="h6" noWrap className={title}>
             Coffee Shop
           </Typography>
-          <IconButton aria-label="home" onClick={() => history.push('/')}>
+          <IconButton
+            className={appBarHomeIcon}
+            aria-label="home"
+            onClick={() => history.push('/')}
+          >
             <HomeSharpIcon />
           </IconButton>
         </Toolbar>

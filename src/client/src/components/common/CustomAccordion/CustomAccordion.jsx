@@ -74,9 +74,11 @@ export const CustomAccordion = ({
                 <Typography
                   className={heading}
                 >{`${extraItem.name}`}</Typography>
-                <Typography
-                  className={heading}
-                >{`$ ${extraItem.price}`}</Typography>
+                {extraItem.price !== 0 && (
+                  <Typography
+                    className={heading}
+                  >{`$ ${extraItem.price}`}</Typography>
+                )}
               </div>
             ))}
           </div>

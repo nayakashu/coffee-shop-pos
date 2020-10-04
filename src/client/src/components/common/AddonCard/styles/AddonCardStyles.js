@@ -23,10 +23,16 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: 180,
+    height: 200,
   },
   cardActions: {
     padding: 0,
+  },
+  title: {
+    fontSize: '1.5rem',
+    '@media (max-width:1000px)': {
+      fontSize: '1rem',
+    },
   },
   disabled: {
     pointerEvents: 'none',
