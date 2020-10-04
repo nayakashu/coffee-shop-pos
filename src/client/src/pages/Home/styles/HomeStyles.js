@@ -3,23 +3,19 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   image: {
     position: 'relative',
-    height: '450px',
-    width: '450px',
-    '@media (max-width:1550px)': {
-      height: '400px',
-      width: '400px',
+    height: '28vw',
+    width: '28vw',
+    '@media (max-width:900px)': {
+      height: '260px',
+      width: '260px',
     },
-    '@media (max-width:1350px)': {
-      height: '350px',
-      width: '350px',
+    '@media (max-width:600px)': {
+      height: '200px',
+      width: '200px',
     },
-    '@media (max-width:1250px)': {
-      height: '300px',
-      width: '300px',
-    },
-    '@media (max-width:1000px)': {
-      height: '250px',
-      width: '250px',
+    '@media (max-width:500px)': {
+      height: '200px',
+      width: '200px',
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
@@ -69,12 +65,15 @@ export default makeStyles((theme) => ({
   },
   imageTitle: {
     position: 'relative',
-    fontSize: '2rem',
+    fontSize: '1.5rem',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
     }px`,
     '@media (max-width:1000px)': {
       fontSize: '1.2rem',
+    },
+    '@media (max-width:500px)': {
+      fontSize: '1rem',
     },
   },
   imageMarked: {

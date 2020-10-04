@@ -3,7 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import HomeSharpIcon from '@material-ui/icons/HomeSharp';
+import HomeIcon from '@material-ui/icons/Home';
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import React from 'react';
 import CoffeeLogo from '../assets/vectors/coffee.svg';
 import checkoutStyles from './styles/CheckoutStyles';
@@ -15,7 +16,7 @@ function CheckoutLayout({ children, history }) {
     title,
     content,
     toolbar,
-    appBarHomeIcon,
+    appBarIcon,
   } = checkoutStyles();
 
   return (
@@ -38,11 +39,18 @@ function CheckoutLayout({ children, history }) {
             Coffee Shop
           </Typography>
           <IconButton
-            className={appBarHomeIcon}
+            className={appBarIcon}
+            aria-label="back"
+            onClick={() => history.goBack()}
+          >
+            <KeyboardBackspaceIcon />
+          </IconButton>
+          <IconButton
+            className={appBarIcon}
             aria-label="home"
             onClick={() => history.push('/')}
           >
-            <HomeSharpIcon />
+            <HomeIcon />
           </IconButton>
         </Toolbar>
       </AppBar>

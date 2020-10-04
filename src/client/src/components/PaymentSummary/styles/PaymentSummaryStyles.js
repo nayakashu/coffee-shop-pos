@@ -1,4 +1,4 @@
-import { green, grey } from '@material-ui/core/colors';
+import { grey } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
@@ -44,7 +44,8 @@ export default makeStyles((theme) => ({
     fontSize: '1.3rem',
     backgroundColor: '#05643C',
     '&:hover': {
-      backgroundColor: green[900],
+      backgroundColor: '#ffcb5b',
+      color: '#40290F',
     },
     [theme.breakpoints.up('sm')]: {
       position: 'static',
