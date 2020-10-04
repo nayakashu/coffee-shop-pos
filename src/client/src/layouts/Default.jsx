@@ -39,6 +39,7 @@ function DefaultLayout({ children, history }) {
     leftDrawerPaper,
     listItemHover,
     activeItem,
+    activeLabel,
   } = defaultStyles();
 
   const [mobileCheckoutOpen, setMobileCheckoutOpen] = useState(false);
@@ -115,16 +116,25 @@ function DefaultLayout({ children, history }) {
             Coffee Shop
           </Typography>
           <div
-            className={appBarLabel}
+            className={`${appBarLabel} ${
+              location.pathname.includes('dripped') ? activeLabel : ''
+            }`}
             onClick={() => history.push('/dripped-coffees')}
           >
             Dripped Coffees
           </div>
-          <div className={appBarLabel} onClick={() => history.push('/lattes')}>
+          <div
+            className={`${appBarLabel} ${
+              location.pathname.includes('latte') ? activeLabel : ''
+            }`}
+            onClick={() => history.push('/lattes')}
+          >
             Lattes
           </div>
           <div
-            className={appBarLabel}
+            className={`${appBarLabel} ${
+              location.pathname.includes('smoothie') ? activeLabel : ''
+            }`}
             onClick={() => history.push('/smoothies')}
           >
             Smoothies

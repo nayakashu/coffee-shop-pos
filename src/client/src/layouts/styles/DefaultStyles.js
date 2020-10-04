@@ -67,6 +67,9 @@ export default makeStyles((theme) => ({
       display: 'none',
     },
   },
+  activeLabel: {
+    borderBottom: '2px solid #ffcb5b',
+  },
   appBarHomeIcon: {
     color: '#ffcb5b',
     transform: 'scale(1.3)',
