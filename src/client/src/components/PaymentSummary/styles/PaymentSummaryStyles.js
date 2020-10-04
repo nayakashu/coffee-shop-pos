@@ -1,14 +1,15 @@
-import { green } from '@material-ui/core/colors';
+import { green, grey } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
+    borderRadius: 0,
   },
   paymentSummaryTitle: {
     alignSelf: 'center',
-    margin: theme.spacing(1),
+    marginTop: theme.spacing(2),
   },
   paymentSummary: {
     display: 'flex',
@@ -20,12 +21,13 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     fontSize: '1.1rem',
+    color: grey[600],
   },
   paymentTotalRow: {
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(7),
+    marginBottom: theme.spacing(6),
   },
   emphasized: {
     fontSize: '1.25rem',
@@ -44,8 +46,11 @@ export default makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: green[900],
     },
-    '@media (min-width: 840px)': {
+    [theme.breakpoints.up('sm')]: {
       position: 'static',
     },
+  },
+  paymentIcon: {
+    transform: 'scale(1.75)',
   },
 }));

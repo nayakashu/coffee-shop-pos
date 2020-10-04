@@ -6,7 +6,7 @@ import React from 'react';
 import useGlobal from '../../store/store';
 import paymentSummaryStyles from './styles/PaymentSummaryStyles';
 
-export const PaymentSummary = () => {
+export const PaymentSummary = ({ onClickHandler }) => {
   const {
     root,
     paymentSummaryTitle,
@@ -15,6 +15,7 @@ export const PaymentSummary = () => {
     paymentTotalRow,
     emphasized,
     button,
+    paymentIcon,
   } = paymentSummaryStyles();
 
   const [storeState] = useGlobal();
@@ -71,16 +72,14 @@ export const PaymentSummary = () => {
             variant="h6"
           >{`$ ${total}`}</Typography>
         </div>
-        <Button
-          variant="contained"
-          size="large"
-          className={button}
-          endIcon={<PaymentIcon />}
-          onClick={() => {}}
-        >
-          Pay
-        </Button>
       </div>
+      <Button
+        variant="contained"
+        size="large"
+        className={button}
+        endIcon={<PaymentIcon className={paymentIcon} />}
+        onClick={onClickHandler}
+      />
     </Card>
   );
 };

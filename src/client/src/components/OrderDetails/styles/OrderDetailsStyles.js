@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
       marginBottom: theme.spacing(4),
       flexDirection: 'row',
     },
+    borderRadius: 0,
   },
   media: {
     width: '100%',
@@ -29,5 +30,8 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     padding: theme.spacing(2),
+  },
+  productCost: {
+    fontSize: '1.25rem',
   },
 }));

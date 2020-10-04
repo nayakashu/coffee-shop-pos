@@ -18,6 +18,7 @@ export const OrderDetails = ({
     product,
     media,
     productDetails,
+    productCost,
   } = orderDetailsStyles();
 
   return (
@@ -28,9 +29,9 @@ export const OrderDetails = ({
           <Typography variant="h5">{productName}</Typography>
         </CardContent>
         <div className={productDetails}>
-          <Typography variant="body1">{`$ ${Number(price).toFixed(
-            2
-          )}`}</Typography>
+          <Typography variant="body1" className={productCost}>{`$ ${Number(
+            price
+          ).toFixed(2)}`}</Typography>
           <Typography variant="subtitle1" color="textSecondary">
             {addons.length ? `Add-Ons: ${addons.join(', ')}` : null}
           </Typography>

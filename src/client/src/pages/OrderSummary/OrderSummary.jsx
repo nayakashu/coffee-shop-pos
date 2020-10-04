@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
 import ShakesCardImage from '../../assets/images/shakes-card.jpg';
+import { OrderConfirmation } from '../../components/OrderConfirmation/OrderConfirmation';
 import { OrderDetails } from '../../components/OrderDetails/OrderDetails';
 import { PaymentSummary } from '../../components/PaymentSummary/PaymentSummary';
 import useGlobal from '../../store/store';
 import './OrderSummary.scss';
 
-export const OrderSummary = () => {
+export const OrderSummary = ({ history }) => {
   const [storeState] = useGlobal();
   const { cart } = storeState;
+
+  const [isPaid, setIsPaid] = useState(false);
 
   return (
     <div className="order-summary-container">
@@ -43,7 +46,11 @@ export const OrderSummary = () => {
         })}
       </div>
       <div className="payment-summary-container">
-        <PaymentSummary />
+        {!isPaid ? (
+          <PaymentSummary onClickHandler={() => setIsPaid(true)} />
+        ) : (
+          <OrderConfirmation onClickHandler={() => history.push('/')} />
+        )}
       </div>
     </div>
   );
