@@ -40,7 +40,7 @@ export const Lattes = ({ history }) => {
   };
 
   return (
-    <div className="lattes-container">
+    <div className="lattes-container fadeInUp">
       {loading ? (
         <PageLoader />
       ) : (

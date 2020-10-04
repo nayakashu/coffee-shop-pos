@@ -40,7 +40,7 @@ export const DrippedCoffees = ({ history }) => {
   };
 
   return (
-    <div className="dripped-coffees-container">
+    <div className="dripped-coffees-container fadeInUp">
       {loading ? (
         <PageLoader />
       ) : (

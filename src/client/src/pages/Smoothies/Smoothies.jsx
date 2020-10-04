@@ -40,7 +40,7 @@ export const Smoothies = ({ history }) => {
   };
 
   return (
-    <div className="smoothies-container">
+    <div className="smoothies-container fadeInUp">
       {loading ? (
         <PageLoader />
       ) : (

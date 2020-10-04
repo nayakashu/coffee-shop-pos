@@ -20,10 +20,11 @@ export const ProductCard = ({
     addBtnContainer,
     addBtn,
     title: titleClass,
+    fadeInUp,
   } = productCardStyles();
 
   return (
-    <Card className={root}>
+    <Card className={`${root} ${fadeInUp}`}>
       <CardMedia className={media} image={cardImage} title="media-title" />
       <CardContent>
         <Typography
