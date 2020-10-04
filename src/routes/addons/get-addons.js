@@ -7,10 +7,10 @@ export const getAddons = async (req, res) => {
     case 'drippedCoffee':
       res.json(drippedCoffeeAddons);
       break;
-    case 'lattes':
+    case 'latte':
       res.json(lattesAddons);
       break;
-    case 'smoothies':
+    case 'smoothie':
       res.json(smoothiesAddons);
       break;
     default:

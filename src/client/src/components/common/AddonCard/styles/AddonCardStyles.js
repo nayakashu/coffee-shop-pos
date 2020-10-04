@@ -28,4 +28,8 @@ export default makeStyles((theme) => ({
   cardActions: {
     padding: 0,
   },
+  disabled: {
+    pointerEvents: 'none',
+    opacity: 0.6,
+  },
 }));

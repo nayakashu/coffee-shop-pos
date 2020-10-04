@@ -12,8 +12,9 @@ const addToCart = (store, payload) => {
 const addExtras = (store, payload) => {
   const newCart = [...store.state.cart];
   const item = newCart[payload.cartIndex];
-
-  if (item.addons) {
+  if (payload.type === 'drippedCoffee') {
+    item.addons = [payload.addons];
+  } else if (item.addons) {
     item.addons = [...item.addons, payload.addons];
   } else {
     item.addons = [payload.addons];

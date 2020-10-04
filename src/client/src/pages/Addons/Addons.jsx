@@ -37,7 +37,10 @@ export const Addons = () => {
       }
 
       list.forEach((addOn) => {
-        checkedState = { ...checkedState, [addOn.title]: false };
+        checkedState = {
+          ...checkedState,
+          [addOn.title]: false,
+        };
       });
 
       cart[activeItemCartIndex] &&
@@ -59,6 +62,7 @@ export const Addons = () => {
         name: name,
         price,
       },
+      type,
     };
 
     if (checked) {
@@ -67,10 +71,18 @@ export const Addons = () => {
       removeExtras(payload);
     }
 
-    setcheckedState({
-      ...checkedState,
-      [name]: checked,
-    });
+    if (type === 'drippedCoffee') {
+      let newCheckedState = { ...checkedState };
+      Object.keys(newCheckedState).forEach((value) => {
+        if (value !== name) newCheckedState[value] = false;
+      });
+      setcheckedState({ ...newCheckedState, [name]: checked });
+    } else {
+      setcheckedState({
+        ...checkedState,
+        [name]: checked,
+      });
+    }
   };
 
   return (

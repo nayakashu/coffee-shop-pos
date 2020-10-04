@@ -7,9 +7,9 @@ import './AddonCard.scss';
 import AddonCardStyles from './styles/AddonCardStyles';
 
 const AddonCard = (props) => {
-  const { root, media, cardActions } = AddonCardStyles();
+  const { root, media, cardActions, disabled } = AddonCardStyles();
   return (
-    <Card className={root}>
+    <Card className={`${root} ${props.disabled && disabled}`}>
       <CardMedia
         className={media}
         image={props.cardImage}
@@ -19,12 +19,12 @@ const AddonCard = (props) => {
         <h2>{`${props.name} - $ ${props.price}`}</h2>
       </CardContent>
       <CardActions className={cardActions}>
-        <div className="inputGroup">
+        <div className={`inputGroup ${props.disabled && disabled}`}>
           <input
             id={props.name}
             name={props.name}
             type="checkbox"
-            checked={props.checked}
+            checked={props.checked || false}
             onChange={props.onChange}
           />
           <label htmlFor={props.name}>

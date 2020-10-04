@@ -36,7 +36,7 @@ export const Lattes = ({ history }) => {
 
   const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData, cartIndex });
-    history.push('/addons/lattes');
+    history.push('/addons/latte');
   };
 
   return (

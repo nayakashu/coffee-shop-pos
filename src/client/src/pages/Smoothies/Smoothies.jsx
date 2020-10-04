@@ -36,7 +36,7 @@ export const Smoothies = ({ history }) => {
 
   const addCartData = (cartData, cartIndex) => {
     addToCart({ cartData, cartIndex });
-    history.push('/addons/smoothies');
+    history.push('/addons/smoothie');
   };
 
   return (

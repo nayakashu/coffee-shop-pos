@@ -1,6 +1,7 @@
 import Badge from '@material-ui/core/Badge';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
+const leftDrawerWidth = 250;
 const rightDrawerWidth = 350;
 
 export const StyledBadge = withStyles((theme) => ({
@@ -61,8 +62,38 @@ export default makeStyles((theme) => ({
     '&:hover': {
       borderBottom: '2px solid white',
     },
+    '@media (max-width:840px)': {
+      display: 'none',
+    },
   },
-  appBarIcon: {
+  appBarHomeIcon: {
     color: 'white',
+    '@media (max-width:840px)': {
+      display: 'none',
+    },
+  },
+  appBarCheckoutIcon: {
+    color: 'white',
+  },
+  menuButton: {
+    '@media (min-width:840px)': {
+      display: 'none',
+    },
+  },
+  leftDrawer: {
+    '@media (min-width:840px)': {
+      display: 'none',
+    },
+  },
+  leftDrawerPaper: {
+    width: leftDrawerWidth,
+  },
+  listItemHover: {
+    '&:hover': {
+      backgroundColor: '#F5F5F5',
+    },
+  },
+  activeItem: {
+    backgroundColor: theme.palette.action.selected,
   },
 }));

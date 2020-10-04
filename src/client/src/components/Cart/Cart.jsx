@@ -47,9 +47,9 @@ const Cart = ({ history }) => {
     }
   };
 
-  const handleCustomizeItem = (cartIndex) => {
+  const handleCustomizeItem = (cartItem, cartIndex) => {
     changeActiveItemIndex({ cartIndex });
-    history.push('/addons');
+    history.push(`/addons/${cartItem.type}`);
   };
 
   return (

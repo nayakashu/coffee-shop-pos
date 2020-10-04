@@ -58,7 +58,7 @@ export const CustomAccordion = ({
             <div className={detailsHeader}>
               <IconButton
                 aria-label="cart-customise"
-                onClick={() => customizeHandler(cartIndex)}
+                onClick={() => customizeHandler(cartItem, cartIndex)}
               >
                 <EditIcon />
               </IconButton>
