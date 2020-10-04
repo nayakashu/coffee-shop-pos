@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
+  emptyCartMessage: {
+    textAlign: 'center',
+    padding: theme.spacing(2),
+  },
   button: {
     width: '100%',
     fontSize: '1.2rem',
@@ -12,5 +16,7 @@ export default makeStyles(() => ({
       backgroundColor: '#ffcb5b',
       color: '#40290F',
     },
+    display: 'flex',
+    justifyContent: 'space-between',
   },
 }));

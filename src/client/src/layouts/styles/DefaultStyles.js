@@ -37,6 +37,7 @@ export default makeStyles((theme) => ({
   },
   rightDrawerPaper: {
     width: rightDrawerWidth,
+    backgroundColor: '#f5f5f5',
   },
   appBar: {
     backgroundColor: '#05643C',

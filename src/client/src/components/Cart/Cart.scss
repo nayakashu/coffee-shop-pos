@@ -31,13 +31,14 @@
     overflow-y: auto;
   }
 
-  .checkout-button {
+  .checkout-btn-container {
     width: '100%';
 
-    .price-wrapper {
-      margin-bottom: 1%;
-      text-align: center;
+    .amount-wrapper {
+      text-align: right;
       font-size: 1.5rem;
+      background-color: #f5f5f5;
+      padding: 12px;
     }
   }
 }

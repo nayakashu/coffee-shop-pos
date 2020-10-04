@@ -19,10 +19,11 @@ export const CustomAccordion = ({
 }) => {
   const location = useLocation();
   const {
+    cartItemAccordion,
     root,
-    heading,
     detailsWrapper,
     detailsHeader,
+    detailsHeaderBorderBottom,
     extraItemWrapper,
     detailsRoot,
   } = customAccordionStyles();
@@ -41,7 +42,7 @@ export const CustomAccordion = ({
 
   return (
     <div className={root}>
-      <Accordion expanded={expanded}>
+      <Accordion expanded={expanded} className={cartItemAccordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-label="Expand"
@@ -49,13 +50,15 @@ export const CustomAccordion = ({
           id="additional-actions1-header"
           onClick={() => setExpanded(!expanded)}
         >
-          <Typography className={heading}>{`${cartIndex + 1}.  ${' '}${
-            cartItem.title
-          }`}</Typography>
+          <Typography variant="h6">{`${cartItem.title}`}</Typography>
         </AccordionSummary>
         <AccordionDetails className={detailsRoot}>
           <div className={detailsWrapper}>
-            <div className={detailsHeader}>
+            <div
+              className={`${detailsHeader} ${
+                cartItem?.addons?.length ? detailsHeaderBorderBottom : ''
+              }`}
+            >
               <IconButton
                 aria-label="cart-customise"
                 onClick={() => customizeHandler(cartItem, cartIndex)}
@@ -71,13 +74,9 @@ export const CustomAccordion = ({
             </div>
             {cartItem?.addons?.map((extraItem, index) => (
               <div key={index} className={extraItemWrapper}>
-                <Typography
-                  className={heading}
-                >{`${extraItem.name}`}</Typography>
+                <Typography variant="body1">{`${extraItem.name}`}</Typography>
                 {extraItem.price !== 0 && (
-                  <Typography
-                    className={heading}
-                  >{`$ ${extraItem.price}`}</Typography>
+                  <Typography variant="body1">{`$ ${extraItem.price}`}</Typography>
                 )}
               </div>
             ))}

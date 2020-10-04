@@ -1,4 +1,5 @@
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
@@ -8,7 +9,8 @@ import './Cart.scss';
 import cartStyles from './styles/CartStyles';
 
 const Cart = ({ history }) => {
-  const { button } = cartStyles();
+  const { emptyCartMessage, button } = cartStyles();
+
   const [amount, setAmount] = useState(0);
 
   const [storeState, storeActions] = useGlobal();
@@ -26,6 +28,7 @@ const Cart = ({ history }) => {
         });
       }
     });
+
     setAmount(Number(cost).toFixed(2));
   }, [cart]);
 
@@ -57,7 +60,9 @@ const Cart = ({ history }) => {
       <div className="toolbar"></div>
       <div className="cart-content-wrapper">
         {cart.length === 0 && (
-          <h4 style={{ textAlign: 'center' }}>No items in cart</h4>
+          <Typography variant="h6" className={emptyCartMessage}>
+            Nothing in cart yet!
+          </Typography>
         )}
         {cart.map((cartItem, index) => (
           <CustomAccordion
@@ -69,8 +74,8 @@ const Cart = ({ history }) => {
           />
         ))}
       </div>
-      <div className="checkout-button">
-        <div className="price-wrapper">{`Amount: $ ${amount}`}</div>
+      <div className="checkout-btn-container">
+        <div className="amount-wrapper">{`$ ${amount}`}</div>
         <Button
           variant="contained"
           size="large"
@@ -78,7 +83,7 @@ const Cart = ({ history }) => {
           endIcon={<ShoppingCartIcon />}
           onClick={() => history.push('/order-summary')}
         >
-          Checkout
+          <Typography variant="body1">Checkout</Typography>
         </Button>
       </div>
     </div>
