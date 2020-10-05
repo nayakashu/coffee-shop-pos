@@ -116,7 +116,3 @@ dist
 
 # System
 .DS_Store
-
-# Development Environment
-.env
-.env.*
