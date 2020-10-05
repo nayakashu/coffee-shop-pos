@@ -23,7 +23,7 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: 200,
+    height: 300,
   },
   cardActions: {
     padding: 0,

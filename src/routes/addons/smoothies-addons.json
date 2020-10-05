@@ -3,32 +3,38 @@
     {
       "id": 1,
       "title": "Chocolate Powder",
-      "price": 0.5
+      "price": 0.5,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896520/coffee-shop-pos/addons/smoothies/chocolate-powder_ybwpjf.jpg"
     },
     {
       "id": 2,
       "title": "Vanilla Powder",
-      "price": 0.5
+      "price": 0.5,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896521/coffee-shop-pos/addons/smoothies/vanilla-powder_q1tjw5.jpg"
     },
     {
       "id": 3,
       "title": "Shots",
-      "price": 1
+      "price": 1,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896524/coffee-shop-pos/addons/smoothies/shots_dwpsgx.jpg"
     },
     {
       "id": 4,
       "title": "Lactose-Free Beverage",
-      "price": 0.95
+      "price": 0.95,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896520/coffee-shop-pos/addons/smoothies/lactose-free_vo6qhn.jpg"
     },
     {
       "id": 5,
       "title": "Heavy Cream",
-      "price": 0.95
+      "price": 0.95,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896521/coffee-shop-pos/addons/smoothies/heavy-cream_chztv9.jpg"
     },
     {
       "id": 6,
       "title": "Additional Frappuccino Roast",
-      "price": 0.6
+      "price": 0.6,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896520/coffee-shop-pos/addons/smoothies/additional-frappuccino-roast_br5zi2.jpg"
     }
   ]
 }

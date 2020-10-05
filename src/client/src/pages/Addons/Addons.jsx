@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
 import AddonCard from '../../components/common/AddonCard/AddonCard';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { getAddons } from '../../services/get-addons';
@@ -89,14 +88,14 @@ export const Addons = () => {
     <div className="addons-container">
       {loading && <PageLoader />}
       {Object.values(checkedState).length > 0 &&
-        addons.map((addon, index) => (
+        addons.map(({ imageUrl, title, price, id }, index) => (
           <AddonCard
             key={index}
-            cardImage={CoffeeCardImage}
-            checked={checkedState[addon.title]}
-            price={addon.price}
-            onChange={(e) => handleChange(e, addon.price, addon.id)}
-            name={addon.title}
+            cardImage={imageUrl}
+            checked={checkedState[title]}
+            price={price}
+            onChange={(e) => handleChange(e, price, id)}
+            name={title}
           />
         ))}
     </div>

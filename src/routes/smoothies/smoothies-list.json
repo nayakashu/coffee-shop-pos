@@ -5,42 +5,48 @@
       "type": "smoothie",
       "title": "Coffee Frappuccino®",
       "price": 5.35,
-      "description": "Coffee meets milk and ice in a blender for a rumble-and-tumble togetherness to create one of our most-beloved original Frappuccino® blended beverages."
+      "description": "Coffee meets milk and ice in a blender for a rumble-and-tumble togetherness to create one of our most-beloved original Frappuccino® blended beverages.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/coffee-frappuccino_fmt7tb.jpg"
     },
     {
       "id": 2,
       "type": "smoothie",
       "title": "Java Chip",
       "price": 5.45,
-      "description": "We blend mocha sauce and Frappuccino® chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle to bring you endless java joy."
+      "description": "We blend mocha sauce and Frappuccino® chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle to bring you endless java joy.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/java-chip_ziva0k.jpg"
     },
     {
       "id": 3,
       "type": "smoothie",
       "title": "Caffè Vanilla",
       "price": 5.45,
-      "description": "We take Frappuccino® roast coffee and vanilla bean powder, combine them with milk and ice, topped with whipped cream. Tastes like happiness."
+      "description": "We take Frappuccino® roast coffee and vanilla bean powder, combine them with milk and ice, topped with whipped cream. Tastes like happiness.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/caffe-vanilla_zf6efr.jpg"
     },
     {
       "id": 4,
       "type": "smoothie",
       "title": "Caramel Ribbon Crunch",
       "price": 5.75,
-      "description": "Buttery caramel syrup blended with coffee, milk and ice, then topped with a layer of dark caramel sauce, whipped cream, caramel drizzle and a crunchy caramel-sugar topping—oh-so-beautifully delicious."
+      "description": "Buttery caramel syrup blended with coffee, milk and ice, then topped with a layer of dark caramel sauce, whipped cream, caramel drizzle and a crunchy caramel-sugar topping—oh-so-beautifully delicious.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/caramel-ribbon-crunch_cntmdt.jpg"
     },
     {
       "id": 5,
       "type": "smoothie",
       "title": "Vanilla Bean Crème",
       "price": 5.35,
-      "description": "This rich and creamy blend of vanilla bean, milk and ice topped with whipped cream takes va-va-vanilla flavour to another level. To change things up, try it affogato-style with a hot espresso shot poured right over the top."
+      "description": "This rich and creamy blend of vanilla bean, milk and ice topped with whipped cream takes va-va-vanilla flavour to another level. To change things up, try it affogato-style with a hot espresso shot poured right over the top.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/vanilla-bean-creme_njcjy1.jpg"
     },
     {
       "id": 6,
       "type": "smoothie",
       "title": "Chai Crème ",
       "price": 5.45,
-      "description": "A creamy blend of spicy chai, milk and ice, finished with sweetened whipped cream and a sprinkle of cinnamon. Specially made to spice up your afternoon treat."
+      "description": "A creamy blend of spicy chai, milk and ice, finished with sweetened whipped cream and a sprinkle of cinnamon. Specially made to spice up your afternoon treat.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/chai-creme_mccbuj.jpg"
     }
   ]
 }

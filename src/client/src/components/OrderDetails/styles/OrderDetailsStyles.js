@@ -13,10 +13,10 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
+    height: 300,
     [theme.breakpoints.up('sm')]: {
       width: '40%',
     },
-    height: 250,
   },
   details: {
     display: 'flex',

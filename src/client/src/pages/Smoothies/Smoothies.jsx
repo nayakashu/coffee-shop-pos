@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ShakesCardImage from '../../assets/images/shakes-card.jpg';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { ProductCard } from '../../components/common/ProductCard/ProductCard';
 import { getListing } from '../../services/get-listing';
@@ -48,7 +47,7 @@ export const Smoothies = ({ history }) => {
           <ProductCard
             key={index}
             indexValue={cart.length}
-            cardImage={ShakesCardImage}
+            cardImage={smoothie.imageUrl}
             title={smoothie.title}
             description={smoothie.description}
             data={smoothie}

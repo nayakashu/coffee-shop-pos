@@ -31,7 +31,7 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: 220,
+    height: 300,
   },
   addBtnContainer: {
     width: '100%',

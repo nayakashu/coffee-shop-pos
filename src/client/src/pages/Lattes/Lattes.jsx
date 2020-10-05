@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { ProductCard } from '../../components/common/ProductCard/ProductCard';
 import { getListing } from '../../services/get-listing';
@@ -48,7 +47,7 @@ export const Lattes = ({ history }) => {
           <ProductCard
             key={index}
             indexValue={cart.length}
-            cardImage={CoffeeCardImage}
+            cardImage={latte.imageUrl}
             title={latte.title}
             description={latte.description}
             data={latte}

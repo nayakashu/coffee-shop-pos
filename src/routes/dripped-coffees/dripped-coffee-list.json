@@ -5,42 +5,48 @@
       "type": "drippedCoffee",
       "title": "Decaf Pike Place® Roast",
       "price": 2.45,
-      "description": "A smooth, well-rounded blend of Latin American coffees with subtly rich flavours of chocolate and toasted nuts, it’s served fresh."
+      "description": "A smooth, well-rounded blend of Latin American coffees with subtly rich flavours of chocolate and toasted nuts, it’s served fresh.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896427/coffee-shop-pos/dripped-coffees/decaf-pike-place-roast_erm9bp.jpg"
     },
     {
       "id": 2,
       "type": "drippedCoffee",
       "title": "True North Blend",
       "price": 2.45,
-      "description": "Lightly roasted coffee that's soft, mellow and flavourful. Easy-drinking and delicious with milk, sugar or flavours like vanilla, caramel or hazelnut."
+      "description": "Lightly roasted coffee that's soft, mellow and flavourful. Easy-drinking and delicious with milk, sugar or flavours like vanilla, caramel or hazelnut.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896427/coffee-shop-pos/dripped-coffees/true-north-blend_rlvq3l.jpg"
     },
     {
       "id": 3,
       "type": "drippedCoffee",
       "title": "Featured Dark Roast",
       "price": 2.45,
-      "description": "This full-bodied dark roast coffee has the bold, robust flavours to showcase our roasting and blending artistry."
+      "description": "This full-bodied dark roast coffee has the bold, robust flavours to showcase our roasting and blending artistry.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896427/coffee-shop-pos/dripped-coffees/featured-dark-roast_miywsk.jpg"
     },
     {
       "id": 4,
       "type": "drippedCoffee",
       "price": 3.15,
       "title": "Caffè Americano",
-      "description": "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance. Pro Tip: For an additional boost, ask your barista to try this with an extra shot."
+      "description": "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance. Pro Tip: For an additional boost, ask your barista to try this with an extra shot.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896427/coffee-shop-pos/dripped-coffees/caffe-americano_ge4zwj.jpg"
     },
     {
       "id": 5,
       "type": "drippedCoffee",
       "price": 3.45,
       "title": "Caffè Misto",
-      "description": "A one-to-one combination of fresh-brewed coffee and steamed milk add up to one distinctly delicious coffee drink remarkably mixed."
+      "description": "A one-to-one combination of fresh-brewed coffee and steamed milk add up to one distinctly delicious coffee drink remarkably mixed.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896766/coffee-shop-pos/dripped-coffees/caffe-misto_lcb3pi.jpg"
     },
     {
       "id": 6,
       "type": "drippedCoffee",
       "price": 2.45,
       "title": "Pike Place® Roast",
-      "description": "From our first store in Seattle’s Pike Place Market to our coffeehouses around the world, customers requested a freshly brewed coffee they could enjoy throughout the day."
+      "description": "From our first store in Seattle’s Pike Place Market to our coffeehouses around the world, customers requested a freshly brewed coffee they could enjoy throughout the day.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896427/coffee-shop-pos/dripped-coffees/pike-place-roast_u4sqll.jpg"
     }
   ]
 }

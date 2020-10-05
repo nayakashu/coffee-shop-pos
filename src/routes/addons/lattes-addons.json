@@ -3,32 +3,38 @@
     {
       "id": 1,
       "title": "Cold Foam",
-      "price": 0.7
+      "price": 0.7,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896497/coffee-shop-pos/addons/lattes/cold-foam_oujq5j.jpg"
     },
     {
       "id": 2,
       "title": "Cinnamon Almond Foam",
-      "price": 0.85
+      "price": 0.85,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896497/coffee-shop-pos/addons/lattes/cinnamon-almond-foam_d7dke5.jpg"
     },
     {
       "id": 3,
       "title": "Honey Blend",
-      "price": 0.6
+      "price": 0.6,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896497/coffee-shop-pos/addons/lattes/honey-blend_zdfbje.jpg"
     },
     {
       "id": 4,
       "title": "Caramel Drizzle",
-      "price": 0.7
+      "price": 0.7,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896497/coffee-shop-pos/addons/lattes/caramel-drizzle_xahxwk.jpg"
     },
     {
       "id": 5,
       "title": "Mocha Sauce",
-      "price": 0.7
+      "price": 0.7,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896499/coffee-shop-pos/addons/lattes/mocha-sauce_sfpwef.jpg"
     },
     {
       "id": 6,
       "title": "Whipped Cream",
-      "price": 0.8
+      "price": 0.8,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896498/coffee-shop-pos/addons/lattes/whipped-cream_ascj4w.jpg"
     }
   ]
 }

@@ -5,42 +5,48 @@
       "type": "latte",
       "title": "Blonde® Americano Misto",
       "price": 4.15,
-      "description": "Seriously smooth and subtly sweet Blonde® Espresso layered with hot water then steamed milk for an authentic, handcrafted espresso beverage."
+      "description": "Seriously smooth and subtly sweet Blonde® Espresso layered with hot water then steamed milk for an authentic, handcrafted espresso beverage.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896440/coffee-shop-pos/lattes/blonde-americano-misto_ygvyr5.jpg"
     },
     {
       "id": 2,
       "type": "latte",
       "title": "Caffè Americano Misto",
       "price": 4.15,
-      "description": "Bold Espresso shots layered with hot water then steamed milk for an authentic, handcrafted espresso beverage."
+      "description": "Bold Espresso shots layered with hot water then steamed milk for an authentic, handcrafted espresso beverage.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896440/coffee-shop-pos/lattes/caffe-americano-misto_stujmt.jpg"
     },
     {
       "id": 3,
       "type": "latte",
       "title": "Cappuccino",
       "price": 4.45,
-      "description": "Dark, rich espresso lies in wait under a smoothed and stretched layer of thick milk foam. An alchemy of barista artistry and craft."
+      "description": "Dark, rich espresso lies in wait under a smoothed and stretched layer of thick milk foam. An alchemy of barista artistry and craft.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896440/coffee-shop-pos/lattes/cappuccino_qqpslu.jpg"
     },
     {
       "id": 4,
       "type": "latte",
       "price": 5.15,
       "title": "Flat White",
-      "description": "Smoothristretto shots of espresso get the perfect amount of steamed whole milk to create a not-too-strong, not-too-creamy, just-right flavour."
+      "description": "Smoothristretto shots of espresso get the perfect amount of steamed whole milk to create a not-too-strong, not-too-creamy, just-right flavour.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896441/coffee-shop-pos/lattes/flat-white_qqoaji.jpg"
     },
     {
       "id": 5,
       "type": "latte",
       "price": 5.95,
       "title": "Apple Oat Flat White",
-      "description": "This flat white combines Starbucks® signature Espresso Roast with a steamed oat beverage and apple flavours, topped with a clove-sugar topping."
+      "description": "This flat white combines Starbucks® signature Espresso Roast with a steamed oat beverage and apple flavours, topped with a clove-sugar topping.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896779/coffee-shop-pos/lattes/apple-oak-flat-white_gd4x0b.jpg"
     },
     {
       "id": 6,
       "type": "latte",
       "price": 4.45,
       "title": "Caffè Latte",
-      "description": "Our dark, rich espresso balanced with steamed milk and a light layer of foam. A perfect milk-forward warm-up."
+      "description": "Our dark, rich espresso balanced with steamed milk and a light layer of foam. A perfect milk-forward warm-up.",
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896440/coffee-shop-pos/lattes/caffee-latte_ymnwz6.jpg"
     }
   ]
 }

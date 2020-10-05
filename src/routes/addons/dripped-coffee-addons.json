@@ -3,22 +3,26 @@
     {
       "id": 1,
       "title": "Short",
-      "price": 0
+      "price": 0,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896472/coffee-shop-pos/addons/dripped-coffees/short_urjegv.jpg"
     },
     {
       "id": 2,
       "title": "Tall",
-      "price": 0.2
+      "price": 0.2,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896472/coffee-shop-pos/addons/dripped-coffees/tall_im3bxx.jpg"
     },
     {
       "id": 3,
       "title": "Grande",
-      "price": 0.5
+      "price": 0.5,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896472/coffee-shop-pos/addons/dripped-coffees/grande_kiwsiu.jpg"
     },
     {
       "id": 4,
       "title": "Venti",
-      "price": 1
+      "price": 1,
+      "imageUrl": "https://res.cloudinary.com/nayakashu/image/upload/v1601896472/coffee-shop-pos/addons/dripped-coffees/venti_ke5dsa.jpg"
     }
   ]
 }

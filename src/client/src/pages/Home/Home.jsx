@@ -1,8 +1,6 @@
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
-import ShakesCardImage from '../../assets/images/shakes-card.jpg';
 import './Home.scss';
 import homeStyles from './styles/HomeStyles';
 
@@ -40,7 +38,7 @@ export const Home = ({ history }) => {
         <span
           className={imageSrc}
           style={{
-            backgroundImage: `url(${CoffeeCardImage})`,
+            backgroundImage: `url('https://res.cloudinary.com/nayakashu/image/upload/v1601896427/coffee-shop-pos/dripped-coffees/decaf-pike-place-roast_erm9bp.jpg')`,
           }}
         />
         <span className={imageBackdrop} />
@@ -66,7 +64,7 @@ export const Home = ({ history }) => {
         <span
           className={imageSrc}
           style={{
-            backgroundImage: `url(${CoffeeCardImage})`,
+            backgroundImage: `url('https://res.cloudinary.com/nayakashu/image/upload/v1601896440/coffee-shop-pos/lattes/caffee-latte_ymnwz6.jpg')`,
           }}
         />
         <span className={imageBackdrop} />
@@ -92,7 +90,7 @@ export const Home = ({ history }) => {
         <span
           className={imageSrc}
           style={{
-            backgroundImage: `url(${ShakesCardImage})`,
+            backgroundImage: `url('https://res.cloudinary.com/nayakashu/image/upload/v1601896455/coffee-shop-pos/smoothies/java-chip_ziva0k.jpg')`,
           }}
         />
         <span className={imageBackdrop} />

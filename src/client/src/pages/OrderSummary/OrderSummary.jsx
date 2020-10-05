@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import CoffeeCardImage from '../../assets/images/coffee-card.jpg';
-import ShakesCardImage from '../../assets/images/shakes-card.jpg';
 import { OrderConfirmation } from '../../components/OrderConfirmation/OrderConfirmation';
 import { OrderDetails } from '../../components/OrderDetails/OrderDetails';
 import { PaymentSummary } from '../../components/PaymentSummary/PaymentSummary';
@@ -16,7 +14,7 @@ export const OrderSummary = ({ history }) => {
   return (
     <div className="order-summary-container">
       <div className="order-details-container">
-        {cart.map(({ addons, type, title, price }, index) => {
+        {cart.map(({ addons, title, price, imageUrl }, index) => {
           const addOnNames = [];
           let addOnTotalPrice = 0;
 
@@ -32,11 +30,7 @@ export const OrderSummary = ({ history }) => {
           return (
             <OrderDetails
               key={index}
-              cardImage={
-                (type === 'drippedCoffee' && CoffeeCardImage) ||
-                (type === 'latte' && CoffeeCardImage) ||
-                (type === 'smoothie' && ShakesCardImage)
-              }
+              cardImage={imageUrl}
               title={title}
               productName={title}
               price={Number(price) + Number(addOnTotalPrice)}
