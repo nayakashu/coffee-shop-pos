@@ -51,6 +51,10 @@ const changeActiveItemIndex = (store, payload) => {
   store.setState({ activeItemCartIndex: payload.cartIndex });
 };
 
+const emptyCart = (store) => {
+  store.setState({ cart: [] });
+};
+
 const actions = {
   setList,
   addToCart,
@@ -58,6 +62,7 @@ const actions = {
   addExtras,
   removeExtras,
   changeActiveItemIndex,
+  emptyCart,
 };
 
 export default actions;

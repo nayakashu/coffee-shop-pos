@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import HomeIcon from '@material-ui/icons/Home';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import React from 'react';
+import useGlobal from '../store/store';
 import CoffeeLogo from '../assets/vectors/coffee.svg';
 import checkoutStyles from './styles/CheckoutStyles';
 
@@ -18,6 +19,9 @@ function CheckoutLayout({ children, history }) {
     toolbar,
     appBarIcon,
   } = checkoutStyles();
+
+  const [storeState] = useGlobal();
+  const { cart } = storeState;
 
   return (
     <div className={root}>
@@ -38,13 +42,17 @@ function CheckoutLayout({ children, history }) {
           <Typography variant="h6" noWrap className={title}>
             Coffee Shop
           </Typography>
-          <IconButton
-            className={appBarIcon}
-            aria-label="back"
-            onClick={() => history.goBack()}
-          >
-            <KeyboardBackspaceIcon />
-          </IconButton>
+          {cart.length ? (
+            <IconButton
+              className={appBarIcon}
+              aria-label="back"
+              onClick={() => history.goBack()}
+            >
+              <KeyboardBackspaceIcon />
+            </IconButton>
+          ) : (
+            ''
+          )}
           <IconButton
             className={appBarIcon}
             aria-label="home"

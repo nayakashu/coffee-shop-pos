@@ -1,10 +1,12 @@
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
 import './Home.scss';
 import homeStyles from './styles/HomeStyles';
 
 export const Home = ({ history }) => {
+  const location = useLocation();
   const {
     image,
     focusVisible,
@@ -14,6 +16,16 @@ export const Home = ({ history }) => {
     imageTitle,
     imageMarked,
   } = homeStyles();
+
+  useEffect(() => {
+    function disableBackButton() {
+      history.push(location.pathname);
+    }
+    disableBackButton();
+    window.addEventListener('popstate', disableBackButton);
+
+    return () => window.removeEventListener('popstate', disableBackButton);
+  }, [history, location.pathname]);
 
   const handleDrippedCoffeeCardClick = () => {
     history.push('/dripped-coffees');
