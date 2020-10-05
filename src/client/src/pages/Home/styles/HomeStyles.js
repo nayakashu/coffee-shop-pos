@@ -6,16 +6,8 @@ export default makeStyles((theme) => ({
     height: '28vw',
     width: '28vw',
     '@media (max-width:900px)': {
-      height: '260px',
-      width: '260px',
-    },
-    '@media (max-width:600px)': {
-      height: '200px',
-      width: '200px',
-    },
-    '@media (max-width:500px)': {
-      height: '200px',
-      width: '200px',
+      height: '26vh',
+      width: '26vh',
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
@@ -71,6 +63,12 @@ export default makeStyles((theme) => ({
     }px`,
     '@media (max-width:1000px)': {
       fontSize: '1.2rem',
+    },
+    '@media (max-height:800px)': {
+      fontSize: '0.9rem',
+    },
+    '@media (max-height:700px)': {
+      fontSize: '0.8rem',
     },
     '@media (max-width:500px)': {
       fontSize: '1rem',
