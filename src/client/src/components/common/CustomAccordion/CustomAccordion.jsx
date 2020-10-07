@@ -54,11 +54,7 @@ export const CustomAccordion = ({
         </AccordionSummary>
         <AccordionDetails className={detailsRoot}>
           <div className={detailsWrapper}>
-            <div
-              className={`${detailsHeader} ${
-                cartItem?.addons?.length ? detailsHeaderBorderBottom : ''
-              }`}
-            >
+            <div className={`${detailsHeader} ${detailsHeaderBorderBottom}`}>
               <IconButton
                 aria-label="cart-customise"
                 onClick={() => customizeHandler(cartItem, cartIndex)}
@@ -71,6 +67,10 @@ export const CustomAccordion = ({
               >
                 <DeleteForeverIcon />
               </IconButton>
+            </div>
+            <div className={extraItemWrapper}>
+              <Typography variant="body1">Base Price</Typography>
+              <Typography variant="body1">{`$ ${cartItem.price}`}</Typography>
             </div>
             {cartItem?.addons?.map((extraItem, index) => (
               <div key={index} className={extraItemWrapper}>
