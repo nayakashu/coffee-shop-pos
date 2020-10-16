@@ -7,6 +7,11 @@
   .order-details-container {
     margin-bottom: 275px;
 
+    .empty-cart-message {
+      text-align: center;
+      padding: 16px;
+    }
+
     @media screen and (min-width: 840px) {
       margin-bottom: 0;
       flex: 1;

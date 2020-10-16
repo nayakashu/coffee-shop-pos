@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Typography from '@material-ui/core/Typography';
 import { useLocation } from 'react-router-dom';
 import { OrderConfirmation } from '../../components/OrderConfirmation/OrderConfirmation';
 import { OrderDetails } from '../../components/OrderDetails/OrderDetails';
@@ -38,7 +39,7 @@ export const OrderSummary = ({ history }) => {
   return (
     <div className="order-summary-container">
       <div className="order-details-container">
-        {orderDetails.length &&
+        {orderDetails.length > 0 ? (
           orderDetails.map(({ addons, title, price, imageUrl }, index) => {
             const addOnNames = [];
             let addOnTotalPrice = 0;
@@ -62,7 +63,12 @@ export const OrderSummary = ({ history }) => {
                 addons={addOnNames}
               />
             );
-          })}
+          })
+        ) : (
+          <Typography variant="h6" className="empty-cart-message">
+            Nothing in cart yet!
+          </Typography>
+        )}
       </div>
       <div className="payment-summary-container">
         {!isPaid ? (

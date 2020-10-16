@@ -77,6 +77,7 @@ export const PaymentSummary = ({ onClickHandler }) => {
         variant="contained"
         size="large"
         className={button}
+        disabled={cart.length === 0}
         endIcon={<PaymentIcon className={paymentIcon} />}
         onClick={onClickHandler}
       />
